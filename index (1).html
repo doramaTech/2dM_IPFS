@@ -1,0 +1,945 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta name="description" content="Portfólio de Jackson Tavares Veiga - Pesquisador, Engenheiro e Artista Digital. Rede de conhecimento em blockchain com certificados IPFS e NFTs compatíveis com Sarafu Network.">
+    <meta name="theme-color" content="#faf8f5">
+    <title>Jackson Tavares Veiga - Portfólio de Pesquisa & NFTs</title>
+    
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #faf8f5;
+            color: #1a1a1a;
+            line-height: 1.6;
+        }
+
+        h1, h2, h3, h4, h5, h6 {
+            font-family: 'Playfair Display', serif;
+            font-weight: 600;
+            letter-spacing: -0.5px;
+        }
+
+        h1 {
+            font-size: clamp(2rem, 5vw, 3.5rem);
+            font-weight: 700;
+        }
+
+        h2 {
+            font-size: clamp(1.75rem, 4vw, 2.5rem);
+            font-weight: 600;
+        }
+
+        h3 {
+            font-size: clamp(1.5rem, 3vw, 2rem);
+            font-weight: 600;
+        }
+
+        p {
+            font-size: 1rem;
+            line-height: 1.8;
+            color: rgba(26, 26, 26, 0.9);
+        }
+
+        .container {
+            width: 100%;
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 1rem;
+        }
+
+        @media (min-width: 768px) {
+            .container {
+                padding: 0 1.5rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .container {
+                padding: 0 2rem;
+            }
+        }
+
+        /* Header */
+        header {
+            position: fixed;
+            top: 0;
+            left: 0;
+            right: 0;
+            z-index: 1000;
+            background: transparent;
+            transition: all 0.4s ease-in-out;
+            padding: 1rem 0;
+        }
+
+        header.scrolled {
+            background: rgba(250, 253, 251, 0.95);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(139, 111, 71, 0.1);
+            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            height: 4rem;
+        }
+
+        .logo {
+            text-decoration: none;
+            color: #8B6F47;
+            transition: all 0.4s ease-in-out;
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .logo:hover {
+            color: rgba(139, 111, 71, 0.8);
+        }
+
+        .logo-icon {
+            font-size: 1.5rem;
+        }
+
+        .logo-text h1 {
+            font-size: 1.25rem;
+            margin-bottom: 0.25rem;
+        }
+
+        .logo-text p {
+            font-size: 0.75rem;
+            color: #6B6B6B;
+            font-weight: 500;
+            letter-spacing: 0.05em;
+        }
+
+        nav {
+            display: none;
+            gap: 2rem;
+        }
+
+        @media (min-width: 768px) {
+            nav {
+                display: flex;
+            }
+        }
+
+        nav a {
+            font-size: 0.875rem;
+            font-weight: 500;
+            color: rgba(26, 26, 26, 0.7);
+            text-decoration: none;
+            transition: all 0.4s ease-in-out;
+            position: relative;
+        }
+
+        nav a:hover {
+            color: #8B6F47;
+        }
+
+        nav a::after {
+            content: '';
+            position: absolute;
+            bottom: -4px;
+            left: 0;
+            width: 0;
+            height: 2px;
+            background: #8B6F47;
+            transition: width 0.3s ease-in-out;
+        }
+
+        nav a:hover::after {
+            width: 100%;
+        }
+
+        /* Hero Section */
+        .hero {
+            padding-top: 8rem;
+            padding-bottom: 5rem;
+            background: #faf8f5;
+            text-align: center;
+        }
+
+        @media (min-width: 768px) {
+            .hero {
+                padding-top: 10rem;
+                padding-bottom: 8rem;
+            }
+        }
+
+        .hero h2 {
+            margin-bottom: 1rem;
+            color: #1a1a1a;
+        }
+
+        .hero p {
+            font-size: 1.125rem;
+            color: #6B6B6B;
+            margin-bottom: 1rem;
+        }
+
+        .hero .accent {
+            color: #8B6F47;
+            font-weight: 600;
+        }
+
+        /* Sections */
+        section {
+            border-bottom: 1px solid rgba(232, 228, 220, 0.5);
+        }
+
+        .section {
+            padding: 5rem 0;
+        }
+
+        @media (min-width: 768px) {
+            .section {
+                padding: 8rem 0;
+            }
+        }
+
+        /* Tree Container */
+        .tree-container {
+            display: flex;
+            flex-direction: column;
+            gap: 2rem;
+        }
+
+        .tree-segment {
+            border-left: 4px solid rgba(139, 111, 71, 0.3);
+            padding-left: 1.5rem;
+            padding-top: 1.5rem;
+            padding-bottom: 1.5rem;
+            animation: slideInLeft 0.6s ease-out;
+        }
+
+        .tree-segment.high-complexity {
+            border-color: #8b6f47;
+        }
+
+        .tree-segment-title {
+            font-size: 1.5rem;
+            font-weight: bold;
+            margin-bottom: 1.5rem;
+            color: #7c5a3d;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            cursor: pointer;
+            user-select: none;
+            transition: color 0.3s ease-in-out;
+        }
+
+        .tree-segment-title:hover {
+            color: #8b6f47;
+        }
+
+        .tree-segment-title-text {
+            display: flex;
+            align-items: center;
+            gap: 0.75rem;
+        }
+
+        .chevron {
+            width: 1.25rem;
+            height: 1.25rem;
+            transition: transform 0.3s ease-in-out;
+        }
+
+        .tree-segment-title.expanded .chevron {
+            transform: rotate(180deg);
+        }
+
+        .nft-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 1.5rem;
+            margin-top: 1.5rem;
+        }
+
+        @media (min-width: 768px) {
+            .nft-grid {
+                grid-template-columns: repeat(2, 1fr);
+                gap: 2rem;
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .nft-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .nft-card {
+            background: white;
+            border: 1px solid #e8e4dc;
+            border-radius: 0.5rem;
+            padding: 1.5rem;
+            transition: all 0.3s ease-in-out;
+            animation: fadeInUp 0.6s ease-out;
+        }
+
+        .nft-card:hover {
+            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+            border-color: #8b6f47;
+        }
+
+        .nft-card.high-complexity {
+            border-color: rgba(139, 111, 71, 0.5);
+            background: linear-gradient(to bottom right, white, rgba(139, 111, 71, 0.02));
+        }
+
+        .nft-card-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: flex-start;
+            margin-bottom: 1rem;
+        }
+
+        .nft-card-title {
+            font-size: 1.125rem;
+            font-weight: 600;
+            color: #1a1a1a;
+            margin-bottom: 0.25rem;
+        }
+
+        .nft-card-author {
+            font-size: 0.75rem;
+            color: rgba(26, 26, 26, 0.5);
+            margin-top: 0.25rem;
+        }
+
+        .nft-badges {
+            display: flex;
+            gap: 0.5rem;
+        }
+
+        .nft-badge {
+            display: inline-block;
+            padding: 0.375rem 0.75rem;
+            border-radius: 9999px;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background-color: rgba(139, 111, 71, 0.1);
+            color: #7c5a3d;
+        }
+
+        .nft-badge.high {
+            background-color: rgba(139, 111, 71, 0.2);
+            color: #5a3d2a;
+        }
+
+        .nft-metadata {
+            font-size: 0.875rem;
+            color: rgba(26, 26, 26, 0.6);
+            margin-top: 1rem;
+            display: flex;
+            flex-direction: column;
+            gap: 0.75rem;
+        }
+
+        .nft-metadata-item {
+            display: flex;
+            gap: 0.5rem;
+            align-items: flex-start;
+        }
+
+        .nft-metadata-label {
+            font-weight: 600;
+            color: rgba(26, 26, 26, 0.7);
+            min-width: 80px;
+        }
+
+        .nft-hash {
+            font-family: 'Courier New', monospace;
+            font-size: 0.75rem;
+            background-color: #f5f5f5;
+            padding: 0.5rem;
+            border-radius: 0.25rem;
+            word-break: break-all;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 0.5rem;
+        }
+
+        .copy-btn {
+            background: none;
+            border: none;
+            cursor: pointer;
+            padding: 0.25rem;
+            color: rgba(26, 26, 26, 0.5);
+            transition: color 0.3s ease-in-out;
+        }
+
+        .copy-btn:hover {
+            color: #8b6f47;
+        }
+
+        .blockchain-badge {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            padding: 0.25rem 0.5rem;
+            border-radius: 0.25rem;
+            font-size: 0.75rem;
+            font-weight: 500;
+            background-color: rgba(123, 90, 61, 0.1);
+            color: #7c5a3d;
+        }
+
+        .nft-description {
+            font-size: 0.875rem;
+            color: rgba(26, 26, 26, 0.7);
+            margin-top: 1rem;
+            line-height: 1.5;
+        }
+
+        .nft-link {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.25rem;
+            margin-top: 1rem;
+            font-size: 0.75rem;
+            color: #8b6f47;
+            text-decoration: none;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .nft-link:hover {
+            text-decoration: underline;
+        }
+
+        /* Contact Section */
+        .contact {
+            background: rgba(45, 80, 22, 0.02);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(26, 26, 26, 0.05);
+            border-top: 1px solid #e8e4dc;
+            padding: 3rem 0;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #6B6B6B;
+        }
+
+        footer p {
+            margin-bottom: 0.5rem;
+            font-size: 0.875rem;
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        @keyframes slideInLeft {
+            from {
+                opacity: 0;
+                transform: translateX(-20px);
+            }
+            to {
+                opacity: 1;
+                transform: translateX(0);
+            }
+        }
+
+        .hidden {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header id="header">
+        <div class="container">
+            <div class="header-content">
+                <a href="#" class="logo">
+                    <span class="logo-icon">🔐</span>
+                    <div class="logo-text">
+                        <h1>Jackson Tavares Veiga</h1>
+                        <p>PESQUISADOR • ENGENHEIRO • ARTISTA DIGITAL</p>
+                    </div>
+                </a>
+                
+                <nav>
+                    <a href="#about">Sobre</a>
+                    <a href="#nfts">NFTs & Certificados</a>
+                    <a href="#contact">Contato</a>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container">
+            <h2>Rede de Conhecimento</h2>
+            <p>Certificados blockchain, pesquisa acadêmica e artes digitais organizados como uma rede viva de conhecimento</p>
+            <p class="accent">Registrados em IPFS • Blockchain Polygon • Compatível com Sarafu Network</p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <main class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
+        <!-- About Section -->
+        <section id="about" style="border: none; padding-bottom: 3rem;">
+            <div style="max-width: 48rem;">
+                <h2>Sobre este Portfólio</h2>
+                <p style="margin-top: 1.5rem; margin-bottom: 1rem; color: rgba(26, 26, 26, 0.8);">
+                    Este portfólio apresenta uma estrutura hierárquica de conhecimento, onde cada certificado blockchain 
+                    representa um fragmento de criação — técnico, artístico ou espiritual. Os itens mais complexos 
+                    (como Teses de Mestrado e o Framework MRCF) aparecem no topo de cada árvore temática.
+                </p>
+                <p style="color: rgba(26, 26, 26, 0.8);">
+                    Cada NFT está registrada em IPFS com hash SHA-256, verificável na blockchain Polygon e compatível 
+                    com a rede social Sarafu Network para trocas com moeda digital.
+                </p>
+            </div>
+        </section>
+
+        <!-- NFT Tree Structure -->
+        <section id="nfts" style="border: none; padding-bottom: 3rem;">
+            <h2 style="margin-bottom: 2rem;">Árvores de Conhecimento</h2>
+            <div class="tree-container" id="treeContainer"></div>
+        </section>
+
+        <!-- Contact Section -->
+        <section id="contact" class="contact" style="border: none; padding-top: 3rem; padding-bottom: 3rem;">
+            <div style="max-width: 48rem;">
+                <h2>Entre em Contato</h2>
+                <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
+                    <div>
+                        <p style="font-size: 0.875rem; color: rgba(26, 26, 26, 0.6); margin-bottom: 0.5rem;">Lattes CNPq</p>
+                        <a href="http://lattes.cnpq.br/8939850014070884" target="_blank" rel="noopener noreferrer" style="color: #8b6f47; text-decoration: none; font-weight: 500;">
+                            Ver Currículo Completo →
+                        </a>
+                    </div>
+                    <div>
+                        <p style="font-size: 0.875rem; color: rgba(26, 26, 26, 0.6); margin-bottom: 0.5rem;">Blockchain & IPFS</p>
+                        <p style="font-size: 0.875rem; color: rgba(26, 26, 26, 0.8);">
+                            Todos os certificados podem ser verificados na blockchain Polygon através de seus hashes IPFS
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="container">
+            <p>© 2025 Jackson Tavares Veiga • Rede de Conhecimento em Blockchain</p>
+            <p style="font-size: 0.75rem; margin-top: 0.5rem; color: rgba(26, 26, 26, 0.5);">
+                Certificados registrados em IPFS | Blockchain: Polygon | Rede Social: Sarafu Network
+            </p>
+        </div>
+    </footer>
+
+    <script>
+        // Data embedded directly
+        const nftData = {
+            "name": "Rede de Conhecimento Jackson Tavares Veiga",
+            "description": "Estrutura hierárquica de artes digitais e certificados blockchain",
+            "children": [
+                {
+                    "name": "MRCF & Engenharia",
+                    "type": "segment",
+                    "children": [
+                        {
+                            "name": "Minicurso Framework MRCF",
+                            "type": "NFT",
+                            "complexity": "High",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Minicurso Framework MRCF",
+                                "ipfs_hash": "4e4189150209cb19cd1cd87b2b25257327c7cfb7aceeb631ca68889dbce80fd2",
+                                "data": "04/10/2025",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884"
+                            }
+                        },
+                        {
+                            "name": "Controle de Manufatura com Sistemas Distribuídos",
+                            "type": "NFT",
+                            "complexity": "Standard",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Controle de Manufatura com Sistemas Distribuídos",
+                                "ipfs_hash": "55a03f27f4bb1b6e297a90b32e267f95932607a1e8849697efc01628ec2e19d7",
+                                "data": "Novembro / 2020",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884",
+                                "descricao": "Trabalho técnico e de pesquisa sobre métodos de controle distribuído aplicados à manufatura inteligente. O estudo propõe estratégias de sincronização e interoperabilidade entre sistemas ciberfísicos, com base em conceitos de Indústria 4.0 e manufatura digital descentralizada."
+                            }
+                        },
+                        {
+                            "name": "Procedimento para Modelar Controle de Coalizão de Capacidades utilizando AAS",
+                            "type": "NFT",
+                            "complexity": "Standard",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Procedimento para Modelar Controle de Coalizão de Capacidades utilizando AAS",
+                                "ipfs_hash": "a5f3b304be234c8cf938607726fdbcd0c658f349575a04fdd7c443943707fb31",
+                                "data": "30/11/2021",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884",
+                                "descricao": "Documento técnico que apresenta um procedimento para modelagem de controle de coalizão de capacidades utilizando o conceito de Asset Administration Shell (AAS)."
+                            }
+                        },
+                        {
+                            "name": "Apresentação Inicial – Pitch MRCF Planar v0",
+                            "type": "NFT",
+                            "complexity": "High",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Apresentação Inicial – Pitch MRCF Planar v0",
+                                "ipfs_hash": "96ef1d41c5add8551f9a57b23e73fcf6ac2272caf9bb9a784c3c58e1b1213724",
+                                "data": "19/09/2025",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884",
+                                "descricao": "Documento de apresentação inicial do Pitch MRCF Planar v0, descrevendo o conceito e os fundamentos do Framework Modular Reconfigurável de Controle Funcional (MRCF)."
+                            }
+                        },
+                        {
+                            "name": "Arquitetura Conceitual – Telemetria Foguete Modelismo",
+                            "type": "NFT",
+                            "complexity": "Standard",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Arquitetura Conceitual – Telemetria Foguete Modelismo",
+                                "ipfs_hash": "58c56ee93745b45d1df5461456fd83916db172122c64d0966b5a5ebc766c32c8",
+                                "data": "29/04/2025",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884",
+                                "descricao": "Arquitetura de telemetria para foguetes experimentais, integrando sensores, comunicação LoRa e sistemas de recuperação."
+                            }
+                        },
+                        {
+                            "name": "Tese de Mestrado – Método de Coalizão de Recursos Virtuais (MCRV)",
+                            "type": "NFT",
+                            "complexity": "High",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Tese de Mestrado – Método de Coalizão de Recursos Virtuais (MCRV)",
+                                "ipfs_hash": "6f6a27c90ce5c3b3a2300b3a70041dfeb7be2decf5d1bcf4ab2610141a884ce3",
+                                "data": "10/2022",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884",
+                                "descricao": "Desenvolvimento de um método para integração modular de recursos digitais em ambientes de simulação distribuída."
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Acadêmico & Pesquisa",
+                    "type": "segment",
+                    "children": [
+                        {
+                            "name": "Lançamento da Plataforma Teias – Conectando Coletivos",
+                            "type": "NFT",
+                            "complexity": "Standard",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Lançamento da Plataforma Teias – Conectando Coletivos",
+                                "ipfs_hash": "3736204a14f384f9fb84c8a281ba3bd1e9992fc4e924f45b3e45acabf0e6adb0",
+                                "data": "27/01/2025",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884",
+                                "descricao": "Plataforma voltada à interligação de ecovilas e coletivos, promovendo rede colaborativa descentralizada."
+                            }
+                        },
+                        {
+                            "name": "Concepção Inicial – Livro Entre Aldeias e Coronéis",
+                            "type": "NFT",
+                            "complexity": "Standard",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Concepção Inicial – Livro Entre Aldeias e Coronéis",
+                                "ipfs_hash": "e5037d6eb9110530deb66c15e0a1a0314c26c6a7657ffc658ff6ecbccc8bc527",
+                                "data": "28/09/2025",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884",
+                                "descricao": "Obra literária sobre culturas híbridas, memórias e tensões sociais brasileiras."
+                            }
+                        },
+                        {
+                            "name": "Relatório do Módulo 6 – Curso de Simulação Defesa ASA",
+                            "type": "NFT",
+                            "complexity": "Standard",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Relatório do Módulo 6 – Curso de Simulação Defesa ASA",
+                                "ipfs_hash": "9f2ad01914ecbf351ff7b047182958bca0a514a3438d69a462301ce935a0458f",
+                                "data": "23/04/2025",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884"
+                            }
+                        },
+                        {
+                            "name": "Relatório Atividade 01 – Projetando Míssel Fox3",
+                            "type": "NFT",
+                            "complexity": "Standard",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Relatório Atividade 01 – Projetando Míssel Fox3",
+                                "ipfs_hash": "95ffdc14a21991a3c2f1106b87b5c7064af6d0567e8e321efe0d46c8b1bdb8df",
+                                "data": "11/03/2025",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884"
+                            }
+                        }
+                    ]
+                },
+                {
+                    "name": "Arte & Coletivos",
+                    "type": "segment",
+                    "children": [
+                        {
+                            "name": "Pitch V0 – Ateliê 2dM",
+                            "type": "NFT",
+                            "complexity": "Standard",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Pitch V0 – Ateliê 2dM",
+                                "ipfs_hash": "8c6f5f2d7174c1e96fd48a1fe1cd57d9088297d325e9f0b8f490f3ca6f2e50be",
+                                "data": "22/10/2025",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884",
+                                "descricao": "Documento de apresentação do ateliê criativo Dois de Muitos — um laboratório de expressão coletiva e arte digital."
+                            }
+                        },
+                        {
+                            "name": "Prova Funcional do Software HDMI para P52 - Serviço a NAVCON",
+                            "type": "NFT",
+                            "complexity": "Standard",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Prova Funcional do Software HDMI para P52 - Serviço a NAVCON",
+                                "ipfs_hash": "47726afc99dc3ebf0afd3f367aeb443d61bf166d5514b28d5a4b2820f78c3344",
+                                "data": "26/10/2025",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884"
+                            }
+                        },
+                        {
+                            "name": "Figma Site Aeronaval",
+                            "type": "NFT",
+                            "complexity": "Standard",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Figma Site Aeronaval",
+                                "ipfs_hash": "23fb7d14888d3681aba682510455f1325d8aa523a0587e805373d0305f83f718",
+                                "data": "2022",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884"
+                            }
+                        },
+                        {
+                            "name": "Sistemas GBAD em defesa de Ponto",
+                            "type": "NFT",
+                            "complexity": "Standard",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Sistemas GBAD em defesa de Ponto",
+                                "ipfs_hash": "f4e40207d3822c403932deb0c627ba2769779381c2e727ef678ef548cf17479d",
+                                "data": "22/09/2025",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884"
+                            }
+                        }
+                    ]
+                }
+            ]
+        };
+
+        // Initialize
+        function init() {
+            renderTree();
+            setupScrollListener();
+        }
+
+        function setupScrollListener() {
+            const header = document.getElementById('header');
+            window.addEventListener('scroll', () => {
+                if (window.scrollY > 50) {
+                    header.classList.add('scrolled');
+                } else {
+                    header.classList.remove('scrolled');
+                }
+            });
+        }
+
+        function renderTree() {
+            const container = document.getElementById('treeContainer');
+            container.innerHTML = '';
+
+            nftData.children.forEach((segment, idx) => {
+                const segmentEl = renderSegment(segment, idx);
+                container.appendChild(segmentEl);
+            });
+        }
+
+        function renderSegment(segment, idx) {
+            const div = document.createElement('div');
+            div.className = 'tree-segment';
+            if (segment.children?.some(c => c.complexity === 'High')) {
+                div.classList.add('high-complexity');
+            }
+            div.style.animationDelay = `${idx * 0.15}s`;
+
+            const title = document.createElement('div');
+            title.className = 'tree-segment-title expanded';
+            title.innerHTML = `
+                <div class="tree-segment-title-text">
+                    <span style="font-size: 1.5rem;">🌳</span>
+                    ${segment.name}
+                </div>
+                <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
+                </svg>
+            `;
+
+            const grid = document.createElement('div');
+            grid.className = 'nft-grid';
+
+            segment.children?.forEach((nft, nftIdx) => {
+                if (nft.metadata && nft.metadata.ipfs_hash && typeof nft.metadata.ipfs_hash === 'string' && !nft.metadata.ipfs_hash.startsWith('[')) {
+                    const card = renderNFTCard(nft, nftIdx);
+                    grid.appendChild(card);
+                }
+            });
+
+            title.addEventListener('click', () => {
+                title.classList.toggle('expanded');
+                grid.classList.toggle('hidden');
+            });
+
+            div.appendChild(title);
+            div.appendChild(grid);
+
+            return div;
+        }
+
+        function renderNFTCard(nft, idx) {
+            const div = document.createElement('div');
+            div.className = 'nft-card';
+            if (nft.complexity === 'High') {
+                div.classList.add('high-complexity');
+            }
+            div.style.animationDelay = `${idx * 0.1}s`;
+
+            const meta = nft.metadata;
+            const hashShort = meta.ipfs_hash.slice(0, 20);
+
+            div.innerHTML = `
+                <div class="nft-card-header">
+                    <div>
+                        <div class="nft-card-title">${meta.titulo}</div>
+                        <div class="nft-card-author">${meta.autor}</div>
+                    </div>
+                    <div class="nft-badges">
+                        ${nft.complexity === 'High' ? '<span class="nft-badge high">Complexo</span>' : ''}
+                        <span class="nft-badge">${nft.complexity || 'Padrão'}</span>
+                    </div>
+                </div>
+
+                <div class="nft-metadata">
+                    <div class="nft-metadata-item">
+                        <span class="nft-metadata-label">Data:</span>
+                        <span>${meta.data}</span>
+                    </div>
+
+                    <div class="nft-metadata-item">
+                        <span class="nft-metadata-label">Blockchain:</span>
+                        <span class="blockchain-badge">${meta.blockchain}</span>
+                    </div>
+
+                    <div class="nft-metadata-item">
+                        <span class="nft-metadata-label">IPFS Hash:</span>
+                        <div class="nft-hash">
+                            <span>${hashShort}...</span>
+                            <button class="copy-btn" onclick="copyHash('${meta.ipfs_hash}')" title="Copiar hash">📋</button>
+                        </div>
+                    </div>
+
+                    <div class="nft-metadata-item">
+                        <span class="nft-metadata-label">Rede:</span>
+                        <span style="font-size: 0.75rem;">${meta.rede_social}</span>
+                    </div>
+                </div>
+
+                ${meta.descricao ? `<div class="nft-description">${meta.descricao}</div>` : ''}
+
+                <a href="${meta.lattes}" target="_blank" rel="noopener noreferrer" class="nft-link">
+                    Ver no Lattes →
+                </a>
+            `;
+
+            return div;
+        }
+
+        function copyHash(hash) {
+            navigator.clipboard.writeText(hash);
+            alert('Hash copiado: ' + hash.slice(0, 20) + '...');
+        }
+
+        // Start
+        document.addEventListener('DOMContentLoaded', init);
+    </script>
+</body>
+</html>
