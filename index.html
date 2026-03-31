@@ -215,6 +215,85 @@
             }
         }
 
+        /* CARROSSEL OFERTAS */
+        .ofertas-carousel {
+            margin: 2rem 0;
+            padding: 2rem 0;
+            background: #faf8f5;
+        }
+
+        .ofertas-carousel h2 {
+            margin-bottom: 1.5rem;
+            color: #1a1a1a;
+        }
+
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 1rem;
+            padding: 0.5rem 0;
+            scroll-behavior: smooth;
+            -webkit-overflow-scrolling: touch;
+        }
+
+        .carousel-container::-webkit-scrollbar {
+            height: 6px;
+        }
+
+        .carousel-container::-webkit-scrollbar-track {
+            background: rgba(139, 111, 71, 0.1);
+            border-radius: 3px;
+        }
+
+        .carousel-container::-webkit-scrollbar-thumb {
+            background: rgba(139, 111, 71, 0.3);
+            border-radius: 3px;
+        }
+
+        .carousel-container::-webkit-scrollbar-thumb:hover {
+            background: rgba(139, 111, 71, 0.5);
+        }
+
+        .carousel-card {
+            min-width: 280px;
+            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
+            border-radius: 12px;
+            padding: 1.5rem;
+            color: #fff;
+            flex-shrink: 0;
+            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+            border: 1px solid rgba(255, 255, 255, 0.1);
+        }
+
+        .carousel-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
+        }
+
+        .carousel-card p {
+            font-size: 0.95rem;
+            font-weight: 500;
+            margin-bottom: 1rem;
+            color: #fff;
+            line-height: 1.4;
+        }
+
+        .carousel-card a {
+            text-decoration: none;
+            color: #00ffcc;
+            font-weight: 600;
+            display: inline-block;
+            margin-top: 0.75rem;
+            transition: all 0.3s ease-in-out;
+            font-size: 0.875rem;
+        }
+
+        .carousel-card a:hover {
+            color: #00ff99;
+            text-decoration: underline;
+        }
+
         /* Tree Container */
         .tree-container {
             display: flex;
@@ -473,45 +552,6 @@
         .hidden {
             display: none;
         }
-        
-        /* CARROSSEL OFERTAS */
-        .ofertas-carousel {
-            margin: 40px 0;
-        }
-        
-        .ofertas-carousel h2 {
-            margin-bottom: 1rem;
-        }
-        
-        .carousel-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 16px;
-            padding: 10px 0;
-            scroll-behavior: smooth;
-        }
-        
-        .carousel-card {
-            min-width: 260px;
-            background: #111;
-            border-radius: 12px;
-            padding: 16px;
-            color: #fff;
-            flex-shrink: 0;
-            transition: transform 0.2s;
-        }
-        
-        .carousel-card:hover {
-            transform: scale(1.05);
-        }
-        
-        .carousel-card a {
-            text-decoration: none;
-            color: #00ffcc;
-            font-weight: bold;
-            display: inline-block;
-            margin-top: 10px;
-        }
     </style>
 </head>
 <body>
@@ -529,6 +569,7 @@
                 
                 <nav>
                     <a href="#about">Sobre</a>
+                    <a href="#ofertas">Ofertas</a>
                     <a href="#nfts">NFTs & Certificados</a>
                     <a href="#contact">Contato</a>
                 </nav>
@@ -545,11 +586,12 @@
         </div>
     </section>
 
-    <section class="ofertas-carousel">
-    <div class="container">
-        <h2>Ofertas & Permutas</h2>
-        <div class="carousel-container" id="carouselOfertas"></div>
-    </div>
+    <!-- Carousel Ofertas -->
+    <section class="ofertas-carousel" id="ofertas">
+        <div class="container">
+            <h2>Ofertas & Permutas</h2>
+            <div class="carousel-container" id="carouselOfertas"></div>
+        </div>
     </section>
 
     <!-- Main Content -->
@@ -609,181 +651,118 @@
     </footer>
 
     <script>
-        // Data embedded directly
+        // =======================
+        // DADOS DAS OFERTAS
+        // =======================
+        const ofertasData = [
+            { titulo: "Modelo 3D de toca disco", busca: "modelo 3d toca disco" },
+            { titulo: "Criar a proposta completa do Toca Disco 2dM", busca: "proposta toca disco 2dM" },
+            { titulo: "Modelo de Proposta de Fabricação", busca: "proposta fabricação modelo" },
+            { titulo: "MVP prototipo de Caixa Abelha Tokenizado", busca: "caixa abelha tokenizado prototipo" },
+            { titulo: "Prototipo Real Turbina dos Ventos Caseira", busca: "turbina eolica caseira prototipo" },
+            { titulo: "Fabricacao de um Biodigestor", busca: "biodigestor fabricacao" },
+            { titulo: "Imprimir 100 colheres sorvete com logo 2dM", busca: "impressao colheres bioplastico 2dM" },
+            { titulo: "MVP Prototipo Maquina Tijolos (busco fabricante)", busca: "maquina tijolos fabricante" },
+            { titulo: "Procuro Doador para Prensa de Livros", busca: "doacao prensa livros" },
+            { titulo: "Imprimir Suporte de Violão", busca: "suporte violao imprimir 3d" },
+            { titulo: "Imprimir Sapateira", busca: "sapateira impressao 3d" },
+            { titulo: "Transporte Portas", busca: "transporte portas serviço" }
+        ];
+
+        // =======================
+        // DADOS DAS NFTs
+        // =======================
         const nftData = {
-          "name": "Rede de Conhecimento Jackson Tavares Veiga",
-          "description": "Estrutura hierárquica de artes digitais e certificados blockchain",
-          "children": [
-        
-            {
-              "name": "MRCF & Engenharia",
-              "type": "segment",
-              "children": [
+            "name": "Rede de Conhecimento Jackson Tavares Veiga",
+            "description": "Estrutura hierárquica de artes digitais e certificados blockchain",
+            "children": [
                 {
-                  "name": "Minicurso Framework MRCF",
-                  "type": "NFT",
-                  "complexity": "High",
-                  "metadata": {
-                    "autor": "Jackson Tavares Veiga",
-                    "tipo": "NFT_Certificado",
-                    "blockchain": "Polygon",
-                    "rede_social": "Sarafu Network Compatible",
-                    "titulo": "Minicurso Framework MRCF",
-                    "ipfs_hash": "4e4189150209cb19cd1cd87b2b25257327c7cfb7aceeb631ca68889dbce80fd2",
-                    "data": "04/10/2025",
-                    "lattes": "http://lattes.cnpq.br/8939850014070884"
-                  }
+                    "name": "MRCF & Engenharia",
+                    "type": "segment",
+                    "children": [
+                        {
+                            "name": "Minicurso Framework MRCF",
+                            "type": "NFT",
+                            "complexity": "High",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Minicurso Framework MRCF",
+                                "ipfs_hash": "4e4189150209cb19cd1cd87b2b25257327c7cfb7aceeb631ca68889dbce80fd2",
+                                "data": "04/10/2025",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884"
+                            }
+                        },
+                        {
+                            "name": "Controle de Manufatura com Sistemas Distribuídos",
+                            "type": "NFT",
+                            "complexity": "Standard",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Controle de Manufatura com Sistemas Distribuídos",
+                                "ipfs_hash": "55a03f27f4bb1b6e297a90b32e267f95932607a1e8849697efc01628ec2e19d7",
+                                "data": "Novembro / 2020",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884",
+                                "descricao": "Trabalho técnico sobre controle distribuído aplicado à manufatura inteligente."
+                            }
+                        }
+                    ]
                 },
                 {
-                  "name": "Controle de Manufatura com Sistemas Distribuídos",
-                  "type": "NFT",
-                  "complexity": "Standard",
-                  "metadata": {
-                    "autor": "Jackson Tavares Veiga",
-                    "tipo": "NFT_Certificado",
-                    "blockchain": "Polygon",
-                    "rede_social": "Sarafu Network Compatible",
-                    "titulo": "Controle de Manufatura com Sistemas Distribuídos",
-                    "ipfs_hash": "55a03f27f4bb1b6e297a90b32e267f95932607a1e8849697efc01628ec2e19d7",
-                    "data": "Novembro / 2020",
-                    "lattes": "http://lattes.cnpq.br/8939850014070884",
-                    "descricao": "Trabalho técnico sobre controle distribuído aplicado à manufatura inteligente."
-                  }
-                },
-        
-                // NOVOS DO ANEXO
-                {
-                  "name": "Apresentação Artigo Doceis 2021",
-                  "type": "NFT",
-                  "complexity": "Standard",
-                  "metadata": {
-                    "autor": "Jackson Tavares Veiga",
-                    "tipo": "NFT_Certificado",
-                    "blockchain": "Polygon",
-                    "rede_social": "Sarafu Network Compatible",
-                    "titulo": "Apresentação Artigo Doceis 2021",
-                    "ipfs_hash": "[HASH_024]",
-                    "data": "02/03/2025",
-                    "lattes": "http://lattes.cnpq.br/8939850014070884"
-                  }
-                },
-                {
-                  "name": "Planejamento Mini Curso",
-                  "type": "NFT",
-                  "complexity": "Standard",
-                  "metadata": {
-                    "autor": "Jackson Tavares Veiga",
-                    "tipo": "NFT_Certificado",
-                    "blockchain": "Polygon",
-                    "rede_social": "Sarafu Network Compatible",
-                    "titulo": "Planejamento Mini Curso",
-                    "ipfs_hash": "[HASH_025]",
-                    "data": "02/02/2025",
-                    "lattes": "http://lattes.cnpq.br/8939850014070884"
-                  }
-                },
-                {
-                  "name": "Artigo Veritas",
-                  "type": "NFT",
-                  "complexity": "Standard",
-                  "metadata": {
-                    "autor": "Jackson Tavares Veiga",
-                    "tipo": "NFT_Certificado",
-                    "blockchain": "Polygon",
-                    "rede_social": "Sarafu Network Compatible",
-                    "titulo": "Artigo Veritas",
-                    "ipfs_hash": "[HASH_029]",
-                    "data": "2021",
-                    "lattes": "http://lattes.cnpq.br/8939850014070884"
-                  }
-                },
-                {
-                  "name": "Intelligent Manufacturing Systems",
-                  "type": "NFT",
-                  "complexity": "Standard",
-                  "metadata": {
-                    "autor": "Jackson Tavares Veiga",
-                    "tipo": "NFT_Certificado",
-                    "blockchain": "Polygon",
-                    "rede_social": "Sarafu Network Compatible",
-                    "titulo": "Intelligent Manufacturing Systems",
-                    "ipfs_hash": "[HASH_033]",
-                    "data": "2021",
-                    "lattes": "http://lattes.cnpq.br/8939850014070884"
-                  }
+                    "name": "Arte & Coletivos",
+                    "type": "segment",
+                    "children": [
+                        {
+                            "name": "Portal PindoramaTech as a Service (PaaS) Especificação",
+                            "type": "NFT",
+                            "complexity": "Standard",
+                            "metadata": {
+                                "autor": "Jackson Tavares Veiga",
+                                "tipo": "NFT_Certificado",
+                                "blockchain": "Polygon",
+                                "rede_social": "Sarafu Network Compatible",
+                                "titulo": "Portal PindoramaTech as a Service (PaaS) Especificação",
+                                "ipfs_hash": "bafybeiao24bc5vqb2yj3riw3drnor3m7pwx5laluz7cqmykhk3xxovdkwm",
+                                "data": "Não informado",
+                                "lattes": "http://lattes.cnpq.br/8939850014070884",
+                                "descricao": "Plataforma PaaS com autenticação 2FA e acesso a especialistas do ecossistema."
+                            }
+                        }
+                    ]
                 }
-              ]
-            },
-        
-            {
-              "name": "Arte & Coletivos",
-              "type": "segment",
-              "children": [
-                {
-                  "name": "Portal PindoramaTech as a Service (PaaS) Especificação",
-                  "type": "NFT",
-                  "complexity": "Standard",
-                  "metadata": {
-                    "autor": "Jackson Tavares Veiga",
-                    "tipo": "NFT_Certificado",
-                    "blockchain": "Polygon",
-                    "rede_social": "Sarafu Network Compatible",
-                    "titulo": "Portal PindoramaTech as a Service (PaaS) Especificação",
-                    "ipfs_hash": "bafybeiao24bc5vqb2yj3riw3drnor3m7pwx5laluz7cqmykhk3xxovdkwm",
-                    "file_id": "019d2d7c-d139-7b4a-a3ce-6e48cdefdf67",
-                    "data": "Não informado",
-                    "lattes": "http://lattes.cnpq.br/8939850014070884",
-                    "descricao": "Plataforma PaaS com autenticação 2FA e acesso a especialistas do ecossistema."
-                  }
-                }
-              ]
-            }
-        
-          ]
+            ]
         };
 
-            // =======================
-            // DADOS DAS OFERTAS
-            // =======================
-            const ofertasData = [
-              { titulo: "Modelo 3D de toca disco", busca: "modelo 3d toca disco" },
-              { titulo: "Criar a proposta completa do Toca Disco 2dM", busca: "proposta toca disco 2dM" },
-              { titulo: "Modelo de Proposta de Fabricação", busca: "proposta fabricação modelo" },
-              { titulo: "MVP prototipo de Caixa Abelha Tokenizado", busca: "caixa abelha tokenizado prototipo" },
-              { titulo: "Prototipo Real Turbina dos Ventos Caseira", busca: "turbina eolica caseira prototipo" },
-              { titulo: "Fabricacao de um Biodigestor", busca: "fabricacao biodigestor" },
-              { titulo: "Imprimir 100 colheres sorvete com logo 2dM", busca: "impressao colheres bioplastico 2dM" },
-              { titulo: "MVP Prototipo Maquina Tijolos (busco fabricante)", busca: "maquina tijolos fabricante" },
-              { titulo: "Procuro Doador para Prensa de Livros", busca: "doacao prensa livros" },
-              { titulo: "Imprimir Suporte de Violão", busca: "suporte violao imprimir 3d" },
-              { titulo: "Imprimir Sapateira", busca: "sapateira impressao 3d" },
-              { titulo: "Transporte Portas", busca: "transporte portas serviço" }
-            ];
-            
-            // =======================
-            // RENDER CARROSSEL
-            // =======================
-            function renderCarousel() {
-                const container = document.getElementById("carouselOfertas");
-                if (!container) return;
-            
-                ofertasData.forEach(item => {
-                    const link = `https://permuto.com.br/?s=${encodeURIComponent(item.busca)}`;
-            
-                    const card = document.createElement("div");
-                    card.className = "carousel-card";
-            
-                    card.innerHTML = `
-                        <p>${item.titulo}</p>
-                        <a href="${link}" target="_blank">Ver no Permuto →</a>
-                    `;
-            
-                    container.appendChild(card);
-                });
-            }
+        // =======================
+        // RENDER CARROSSEL
+        // =======================
+        function renderCarousel() {
+            const container = document.getElementById("carouselOfertas");
+            if (!container) return;
+
+            ofertasData.forEach(item => {
+                const link = `https://permuto.com.br/?s=${encodeURIComponent(item.busca)}`;
+
+                const card = document.createElement("div");
+                card.className = "carousel-card";
+
+                card.innerHTML = `
+                    <p>${item.titulo}</p>
+                    <a href="${link}" target="_blank" rel="noopener noreferrer">Ver no Permuto →</a>
+                `;
+
+                container.appendChild(card);
+            });
+        }
 
         // Initialize
         function init() {
+            renderCarousel();
             renderTree();
             setupScrollListener();
         }
