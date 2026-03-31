@@ -473,6 +473,45 @@
         .hidden {
             display: none;
         }
+        
+        /* CARROSSEL OFERTAS */
+        .ofertas-carousel {
+            margin: 40px 0;
+        }
+        
+        .ofertas-carousel h2 {
+            margin-bottom: 1rem;
+        }
+        
+        .carousel-container {
+            display: flex;
+            overflow-x: auto;
+            gap: 16px;
+            padding: 10px 0;
+            scroll-behavior: smooth;
+        }
+        
+        .carousel-card {
+            min-width: 260px;
+            background: #111;
+            border-radius: 12px;
+            padding: 16px;
+            color: #fff;
+            flex-shrink: 0;
+            transition: transform 0.2s;
+        }
+        
+        .carousel-card:hover {
+            transform: scale(1.05);
+        }
+        
+        .carousel-card a {
+            text-decoration: none;
+            color: #00ffcc;
+            font-weight: bold;
+            display: inline-block;
+            margin-top: 10px;
+        }
     </style>
 </head>
 <body>
@@ -504,6 +543,13 @@
             <p>Certificados blockchain, pesquisa acadêmica e artes digitais organizados como uma rede viva de conhecimento</p>
             <p class="accent">Registrados em IPFS • Blockchain Polygon • Compatível com Sarafu Network</p>
         </div>
+    </section>
+
+    <section class="ofertas-carousel">
+    <div class="container">
+        <h2>Ofertas & Permutas</h2>
+        <div class="carousel-container" id="carouselOfertas"></div>
+    </div>
     </section>
 
     <!-- Main Content -->
@@ -695,6 +741,46 @@
         
           ]
         };
+
+            // =======================
+            // DADOS DAS OFERTAS
+            // =======================
+            const ofertasData = [
+              { titulo: "Modelo 3D de toca disco", busca: "modelo 3d toca disco" },
+              { titulo: "Criar a proposta completa do Toca Disco 2dM", busca: "proposta toca disco 2dM" },
+              { titulo: "Modelo de Proposta de Fabricação", busca: "proposta fabricação modelo" },
+              { titulo: "MVP prototipo de Caixa Abelha Tokenizado", busca: "caixa abelha tokenizado prototipo" },
+              { titulo: "Prototipo Real Turbina dos Ventos Caseira", busca: "turbina eolica caseira prototipo" },
+              { titulo: "Fabricacao de um Biodigestor", busca: "fabricacao biodigestor" },
+              { titulo: "Imprimir 100 colheres sorvete com logo 2dM", busca: "impressao colheres bioplastico 2dM" },
+              { titulo: "MVP Prototipo Maquina Tijolos (busco fabricante)", busca: "maquina tijolos fabricante" },
+              { titulo: "Procuro Doador para Prensa de Livros", busca: "doacao prensa livros" },
+              { titulo: "Imprimir Suporte de Violão", busca: "suporte violao imprimir 3d" },
+              { titulo: "Imprimir Sapateira", busca: "sapateira impressao 3d" },
+              { titulo: "Transporte Portas", busca: "transporte portas serviço" }
+            ];
+            
+            // =======================
+            // RENDER CARROSSEL
+            // =======================
+            function renderCarousel() {
+                const container = document.getElementById("carouselOfertas");
+                if (!container) return;
+            
+                ofertasData.forEach(item => {
+                    const link = `https://permuto.com.br/?s=${encodeURIComponent(item.busca)}`;
+            
+                    const card = document.createElement("div");
+                    card.className = "carousel-card";
+            
+                    card.innerHTML = `
+                        <p>${item.titulo}</p>
+                        <a href="${link}" target="_blank">Ver no Permuto →</a>
+                    `;
+            
+                    container.appendChild(card);
+                });
+            }
 
         // Initialize
         function init() {
