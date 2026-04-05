@@ -330,6 +330,7 @@
                                 "ipfs_cid": "4e4189150209cb19cd1cd87b2b25257327c7cfb7aceeb631ca68889dbce80fd2",
                                 "data": "04/10/2025",
                                 "descricao": "Framework para replanejamento de missões e controle de sistemas complexos.",
+                                "imagem": "curso_utm", // Será imgs/portfolio_humanizado.svg,
                                 "opensea": "https://opensea.io/collection/2dm",
                                 "sarafu": "https://sarafu.network/vouchers/0x5edA8e2EAEaF93a1b4d6dD20005FfC15091cA583",
                                 "academic": "https://www.udemy.com/course/planar-sim-uas-utm/?referralCode=C5E5B55EA9F5809D63E0"
@@ -345,6 +346,7 @@
                                 "ipfs_cid": "55a03f27f4bb1b6e297a90b32e267f95932607a1e8849697efc01628ec2e19d7",
                                 "data": "Novembro / 2020",
                                 "descricao": "Trabalho técnico sobre controle distribuído aplicado à manufatura inteligente.",
+                                "imagem": "manufatura", // Será imgs/portfolio_humanizado.svg,
                                 "opensea": "https://opensea.io/collection/2dm",
                                 "sarafu": "https://sarafu.network/vouchers/0x5edA8e2EAEaF93a1b4d6dD20005FfC15091cA583"
                             }
@@ -364,6 +366,7 @@
                                 "ipfs_cid": "bafybeidvacdxnpogpu5stjrxq4i6zg3mffzcpowdcikx5ffisvman6rvfa",
                                 "data": "2024",
                                 "descricao": "Exploração de interfaces digitais com foco na experiência humana e coletiva.",
+                                "imagem": "portfolio_humanizado", // Será imgs/portfolio_humanizado.svg,
                                 "opensea": "https://opensea.io/collection/2dm",
                                 "sarafu": "https://sarafu.network/vouchers/0x5edA8e2EAEaF93a1b4d6dD20005FfC15091cA583",
                                 "site": "https://silviagilwanova.netlify.app/"
@@ -375,7 +378,7 @@
                     "name": "Relatórios",
                     "children": [
                         {
-                            "name": "Portfólio Humanizado",
+                            "name": "Relatório Silvi Earths",
                             "type": "NFT",
                             "metadata": {
                                 "autor": "Arã Yabytã (Akan)",
@@ -384,6 +387,7 @@
                                 "ipfs_cid": "bafybeidvacdxnpogpu5stjrxq4i6zg3mffzcpowdcikx5ffisvman6rvfa",
                                 "data": "2024",
                                 "descricao": "Exploração de interfaces digitais com foco na experiência humana e coletiva.",
+                                "imagem": "relatorio_silvi", // Será imgs/portfolio_humanizado.svg,
                                 "opensea": "https://opensea.io/collection/2dm",
                                 "sarafu": "https://sarafu.network/vouchers/0x5edA8e2EAEaF93a1b4d6dD20005FfC15091cA583",
                                 "site": "https://silviagilwanova.netlify.app/"
@@ -404,6 +408,7 @@
                                 "ipfs_cid": "bafybeidvacdxnpogpu5stjrxq4i6zg3mffzcpowdcikx5ffisvman6rvfa",
                                 "data": "2024",
                                 "descricao": "Exploração de interfaces digitais com foco na experiência humana e coletiva.",
+                                "imagem": "portfolio_humanizado", // Será imgs/portfolio_humanizado.svg,
                                 "opensea": "https://opensea.io/collection/2dm",
                                 "sarafu": "https://sarafu.network/vouchers/0x5edA8e2EAEaF93a1b4d6dD20005FfC15091cA583",
                                 "site": "https://silviagilwanova.netlify.app/"
@@ -462,7 +467,15 @@
             const card = document.createElement('div');
             card.className = 'nft-card';
 
+         // Lógica de Imagem: Tenta carregar imgs/nome.svg, senão usa placeholder
+            let imageHTML = '';
+            if (meta.imagem) {
+                const imagePath = `imgs/${meta.imagem}.svg`;
+                imageHTML = `<img src="${imagePath}" alt="${meta.titulo}" onerror="this.style.display='none'; this.nextElementSibling.style.display='flex';">`;
+            }
+            
             const placeholderIcon = meta.titulo.toLowerCase().includes('relatório') ? '📄' : '🖼️';
+            const placeholderHTML = `<div class="nft-placeholder" style="${meta.imagem ? 'display:none;' : ''}">${placeholderIcon}</div>`;
 
             card.innerHTML = `
                 <div class="nft-image-container">
