@@ -314,474 +314,963 @@
 
     <script>
         // Dados das NFTs com os novos campos solicitados
-        const nftData = {
-            "name": "Rede de Conhecimento Coletivo 2DM",
+        {
+    "name": "Rede de Conhecimento Coletivo 2DM",
+    "children": [
+        {
+            "name": "Cursos",
             "children": [
-
-             {
-                    "name": "Cursos",
-                    "children": [
-                                    {
-                            "name": "Minicurso Framework MRCF",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "Jackson Tavares Veiga",
-                                "blockchain": "Polygon",
-                                "titulo": "Mission Replanning and Control Framework (MRCF)",
-                                "ipfs_cid": "4e4189150209cb19cd1cd87b2b25257327c7cfb7aceeb631ca68889dbce80fd2",
-                                "data": "04/10/2025",
-                                "descricao": "Framework para replanejamento de missões e controle em ambientes UTM e operações BVLOS.",
-                                "imagem": "curso_utm",
-                                "opensea": "https://opensea.io/collection/2dm",
-                                "sarafu": "https://sarafu.network/vouchers/0x5edA8e2EAEaF93a1b4d6dD20005FfC15091cA583",
-                                "site": "https://www.udemy.com/course/planar-sim-uas-utm/?referralCode=C5E5B55EA9F5809D63E0"
-                            }
-                        }
-                 {
-                    "name": "Livros",
-                    "children": [
-                                                {
-                            "name": "Livro Lidando com Minhas Sombras",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "Dois de Muitos",
-                                "blockchain": "preencher",
-                                "titulo": "Lidando com Minhas Sombras",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Exploração interna e processo de autoconhecimento através da integração das sombras pessoais.",
-                                "imagem": "livro_sombras",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "preencher"
-                            }
-                        },        
-                        {
-                            "name": "Livro Início do Caminhar",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "Dois de Muitos",
-                                "blockchain": "preencher",
-                                "titulo": "Início do Caminhar",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Livro distribuído em modelo de troca social com acesso via contribuições colaborativas e vivências comunitárias.",
-                                "imagem": "livro_caminhar",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "https://www.amazon.com.br/In%C3%ADcio-do-Caminhar-Dois-Muitos-ebook/dp/B0FK4DFD3X"
-                            }
-                        },
-                        {
-                            "name": "Livro Cair das Máscaras",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "Dois de Muitos",
-                                "blockchain": "IPFS",
-                                "titulo": "Paranormalidades e Coisas que Só Existem Dentro de Mim",
-                                "ipfs_cid": "bafybeigb43fig7co6dt3wmiiiycgcuml473br66kvfoqza7jj2c6uaesrq",
-                                "data": "preencher",
-                                "descricao": "Obra sobre percepções internas, estados subjetivos e realidades não convencionais.",
-                                "imagem": "livro_mascaras",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafybeigb43fig7co6dt3wmiiiycgcuml473br66kvfoqza7jj2c6uaesrq"
-                            }
-                        },
-                        {
-                            "name": "Livro Paranormalidades",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "Dois de Muitos",
-                                "blockchain": "IPFS",
-                                "titulo": "Paranormalidades e Coisas que Só Existem Dentro de Mim",
-                                "ipfs_cid": "bafybeigb43fig7co6dt3wmiiiycgcuml473br66kvfoqza7jj2c6uaesrq",
-                                "data": "preencher",
-                                "descricao": "Obra experimental com acesso descentralizado via IPFS explorando dimensões subjetivas.",
-                                "imagem": "livro_paranormal",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafybeigb43fig7co6dt3wmiiiycgcuml473br66kvfoqza7jj2c6uaesrq"
-                            }
-                        }
-                    ]
-                },
-        
                 {
-                    "name": "Plataformas",
-                    "children": [
-                        {
-                            "name": "Plataforma AMAINAR",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "2DM",
-                                "blockchain": "preencher",
-                                "titulo": "Proposta Plataforma AMAINAR",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Proposta de visão de negócio para plataforma regenerativa e colaborativa.",
-                                "imagem": "amainar",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "preencher"
-                            }
-                        },
-                        {
-                            "name": "2DM Game",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "2DM",
-                                "blockchain": "preencher",
-                                "titulo": "Aplicativo de Regeneração Gamificado",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Proposta de app estilo Strava da regeneração com integração futura a moedas sociais e carbono.",
-                                "imagem": "2dm_game",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "https://doramatech.github.io/2dmgame/"
-                            }
-                        }
-                    ]
-                },
-        
-                {
-                    "name": "Sites",
-                    "children": [
-                        {
-                            "name": "Clube da Transição",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "2DM + Ecovida Pangeia",
-                                "blockchain": "preencher",
-                                "titulo": "Landing Page Clube da Transição",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Estratégia, revisão e construção da landing page do clube.",
-                                "imagem": "clube_transicao",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "https://ecovidapangeia.com/clube-da-transicao"
-                            }
-                        },
-                        {
-                            "name": "Ecovila Sustentar",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "2DM",
-                                "blockchain": "preencher",
-                                "titulo": "Site Ecovila Sustentar",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Construção de layout inicial e articulação com desenvolvedores e artistas.",
-                                "imagem": "sustentar",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "https://www.ecovilasustentar.eco.br/"
-                            }
-                        },
-                        {
-                            "name": "AERONAVAL",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "2DM",
-                                "blockchain": "preencher",
-                                "titulo": "Landing Page AERONAVAL",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Apoio voluntário na construção da landing page durante doutorado no ITA.",
-                                "imagem": "aeronaval",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "preencher"
-                            }
-                        }
-                    ]
-                },
-        
-                {
-                    "name": "Sistemas",
-                    "children": [
-                        {
-                            "name": "Fitconnect",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "2DM",
-                                "blockchain": "preencher",
-                                "titulo": "Ecossistema de Academias Digitais",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Grupo de estudos e mapeamento para construção de ecossistema fitness digital.",
-                                "imagem": "fitconnect",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "https://github.com/doramaTech"
-                            }
-                        },
-                        {
-                            "name": "Portal Minimalista",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "2DM",
-                                "blockchain": "preencher",
-                                "titulo": "Portal Teias",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Primeira versão do portal do jardim digital Teias.",
-                                "imagem": "portal_teias",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "https://github.com/doramaTech/portal"
-                            }
-                        }
-                    ]
-                },
-        
-                {
-                    "name": "IA",
-                    "children": [
-                        {
-                            "name": "ChatBot 2DM",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "2DM",
-                                "blockchain": "preencher",
-                                "titulo": "Chatbot WhatsApp 2DM",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Sistema de atendimento automatizado criado antes das IAs nativas da Meta.",
-                                "imagem": "chatbot",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "https://github.com/doramaTech/Suporte-2dM"
-                            }
-                        }
-                    ]
-                },
-        
-                {
-                    "name": "Web3",
-                    "children": [
-                        {
-                            "name": "Loja Web3",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "2DM",
-                                "blockchain": "Ethereum",
-                                "titulo": "Shop Web3 com Metamask",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Sistema completo com frontend e backend para vendas e financiamento coletivo.",
-                                "imagem": "shop_web3",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "preencher"
-                            }
-                        },
-                        {
-                            "name": "Coletivo 2DM Landing",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "2DM",
-                                "blockchain": "preencher",
-                                "titulo": "Landing Web3 Coletivo 2DM",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Página de boas-vindas com design Web3 e integração de parceiros.",
-                                "imagem": "coletivo",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "https://github.com/doramaTech/coletivo-2dm-landing/"
-                            }
-                        }
-                    ]
-                },
-                                {
-                    "name": "Artigos",
-                    "children": [
-                        {
-                            "name": "Agent-Oriented Control I4.0",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "Jackson Tavares Veiga",
-                                "blockchain": "preencher",
-                                "titulo": "A systematic modelling procedure to design agent-oriented control to coalition of capabilities",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Modelagem sistemática para controle orientado a agentes em sistemas I4.0 como ativos virtuais.",
-                                "imagem": "artigo_i40_1",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:qjMakFHDy7sC"
-                            }
-                        },
-                        {
-                            "name": "Intelligent Manufacturing Systems",
-                            "type": "NFT",
-                            "metadata": {
-                                "autor": "Jackson Tavares Veiga",
-                                "blockchain": "preencher",
-                                "titulo": "Intelligent Manufacturing Systems: Self-organization in the I4.0 context",
-                                "ipfs_cid": "preencher",
-                                "data": "preencher",
-                                "descricao": "Auto-organização em sistemas de manufatura inteligentes no contexto da Indústria 4.0.",
-                                "imagem": "artigo_i40_2",
-                                "opensea": "preencher",
-                                "sarafu": "preencher",
-                                "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:u-x6o8ySG0sC"
-                            }
-                        },
-                        {
-                                "name": "HMS/EPS Manufacturing Control",
-                                "type": "NFT",
-                                "metadata": {
-                                    "autor": "Jackson Tavares Veiga",
-                                    "blockchain": "preencher",
-                                    "titulo": "Control of manufacturing systems by HMS/EPS paradigms",
-                                    "ipfs_cid": "preencher",
-                                    "data": "preencher",
-                                    "descricao": "Controle de sistemas de manufatura usando paradigmas HMS/EPS na Indústria 4.0.",
-                                    "imagem": "artigo_i40_3",
-                                    "opensea": "preencher",
-                                    "sarafu": "preencher",
-                                    "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:u5HHmVD_uO8C"
-                                }
-                            },
-                                {
-                                    "name": "Controle Distribuído I4.0",
-                                    "type": "NFT",
-                                    "metadata": {
-                                        "autor": "Jackson Tavares Veiga",
-                                        "blockchain": "preencher",
-                                        "titulo": "Controle de Sistemas de Manufatura Distribuídos no contexto da Indústria 4.0",
-                                        "ipfs_cid": "preencher",
-                                        "data": "preencher",
-                                        "descricao": "Estudo sobre controle distribuído aplicado à manufatura inteligente.",
-                                        "imagem": "artigo_i40_4",
-                                        "opensea": "preencher",
-                                        "sarafu": "preencher",
-                                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:d1gkVwhDpl0C"
-                                    }
-                                },
-                                {
-                                "name": "Coalizão Multiagente I4.0",
-                                "type": "NFT",
-                                "metadata": {
-                                    "autor": "Jackson Tavares Veiga",
-                                    "blockchain": "preencher",
-                                    "titulo": "Método para controle de coalizão de recursos virtuais baseado em multi-agentes",
-                                    "ipfs_cid": "preencher",
-                                    "data": "preencher",
-                                    "descricao": "Proposta de método para controle de coalizões em sistemas multiagentes.",
-                                    "imagem": "artigo_i40_5",
-                                    "opensea": "preencher",
-                                    "sarafu": "preencher",
-                                    "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:2osOgNQ5qMEC"
-                                }
-                            },
-                                {
-                                    "name": "WebStation BRV Combat",
-                                    "type": "NFT",
-                                    "metadata": {
-                                        "autor": "Jackson Tavares Veiga",
-                                        "blockchain": "preencher",
-                                        "titulo": "WebStation: Situational Awareness Platform",
-                                        "ipfs_cid": "preencher",
-                                        "data": "preencher",
-                                        "descricao": "Plataforma web para consciência situacional em combate BRV.",
-                                        "imagem": "artigo_defesa_1",
-                                        "opensea": "preencher",
-                                        "sarafu": "preencher",
-                                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:W7OEmFMy1HYC"
-                                    }
-                                },
-                                {
-                                    "name": "MRCF Base",
-                                    "type": "NFT",
-                                    "metadata": {
-                                        "autor": "Jackson Tavares Veiga",
-                                        "blockchain": "preencher",
-                                        "titulo": "Mission Replanning and Control Framework (MRCF)",
-                                        "ipfs_cid": "preencher",
-                                        "data": "preencher",
-                                        "descricao": "Framework estratégico para replanejamento de missões.",
-                                        "imagem": "artigo_mrcf_1",
-                                        "opensea": "preencher",
-                                        "sarafu": "preencher",
-                                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:Tyk-4Ss8FVUC"
-                                    }
-                                },
-                                {
-                                        "name": "MRCF BVLOS",
-                                        "type": "NFT",
-                                        "metadata": {
-                                            "autor": "Jackson Tavares Veiga",
-                                            "blockchain": "preencher",
-                                            "titulo": "MRCF: Strategic Architecture for BVLOS Operations",
-                                            "ipfs_cid": "preencher",
-                                            "data": "preencher",
-                                            "descricao": "Arquitetura estratégica para operações BVLOS em UTM.",
-                                            "imagem": "artigo_mrcf_2",
-                                            "opensea": "preencher",
-                                            "sarafu": "preencher",
-                                            "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:Y0pCki6q_DkC"
-                                        }
-                                    },
-                                    {
-                                        "name": "GBAD Saturação",
-                                        "type": "NFT",
-                                        "metadata": {
-                                            "autor": "Jackson Tavares Veiga",
-                                            "blockchain": "preencher",
-                                            "titulo": "Desempenho de Sistemas GBADs",
-                                            "ipfs_cid": "preencher",
-                                            "data": "preencher",
-                                            "descricao": "Análise de saturação de alvos em sistemas de defesa de ponto.",
-                                            "imagem": "artigo_defesa_2",
-                                            "opensea": "preencher",
-                                            "sarafu": "preencher",
-                                            "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:zYLM7Y9cAGgC"
-                                        }
-                                    },
-                                        {
-                                        "name": "LEON3 SIL",
-                                        "type": "NFT",
-                                        "metadata": {
-                                            "autor": "Jackson Tavares Veiga",
-                                            "blockchain": "preencher",
-                                            "titulo": "Virtualized Architecture for Software-in-the-Loop Testing",
-                                            "ipfs_cid": "preencher",
-                                            "data": "preencher",
-                                            "descricao": "Arquitetura virtualizada para testes SIL aplicada ao processador LEON3.",
-                                            "imagem": "artigo_space_1",
-                                            "opensea": "preencher",
-                                            "sarafu": "preencher",
-                                            "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:UeHWp8X0CEIC"
-                                        }
-                                    },
-                                    {
-                                        "name": "Virtual Testing Space Systems",
-                                        "type": "NFT",
-                                        "metadata": {
-                                            "autor": "Jackson Tavares Veiga",
-                                            "blockchain": "preencher",
-                                            "titulo": "Experience Report on Virtual Testing Architecture",
-                                            "ipfs_cid": "preencher",
-                                            "data": "preencher",
-                                            "descricao": "Relato de experiência em testes virtuais para sistemas espaciais embarcados.",
-                                            "imagem": "artigo_space_2",
-                                            "opensea": "preencher",
-                                            "sarafu": "preencher",
-                                            "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:IjCSPb-OGe4C"
-                                        }
-                                    }
-                        
-                        }
-                    ]
+                    "name": "Minicurso Framework MRCF",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "Polygon",
+                        "titulo": "Mission Replanning and Control Framework (MRCF)",
+                        "ipfs_cid": "4e4189150209cb19cd1cd87b2b25257327c7cfb7aceeb631ca68889dbce80fd2",
+                        "data": "04/10/2025",
+                        "descricao": "Framework para replanejamento de missões e controle em ambientes UTM e operações BVLOS.",
+                        "imagem": "curso_utm",
+                        "opensea": "https://opensea.io/collection/2dm",
+                        "sarafu": "https://sarafu.network/vouchers/0x5edA8e2EAEaF93a1b4d6dD20005FfC15091cA583",
+                        "site": "https://www.udemy.com/course/planar-sim-uas-utm/?referralCode=C5E5B55EA9F5809D63E0"
+                    }
                 }
-        
             ]
-        };
+        },
+        {
+            "name": "Livros",
+            "children": [
+                {
+                    "name": "Livro Lidando com Minhas Sombras",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Dois de Muitos",
+                        "blockchain": "preencher",
+                        "titulo": "Lidando com Minhas Sombras",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Exploração interna e processo de autoconhecimento através da integração das sombras pessoais.",
+                        "imagem": "livro_sombras",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Livro Início do Caminhar",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Dois de Muitos",
+                        "blockchain": "preencher",
+                        "titulo": "Início do Caminhar",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Livro distribuído em modelo de troca social com acesso via contribuições colaborativas e vivências comunitárias.",
+                        "imagem": "livro_caminhar",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://www.amazon.com.br/In%C3%ADcio-do-Caminhar-Dois-Muitos-ebook/dp/B0FK4DFD3X"
+                    }
+                },
+                {
+                    "name": "Livro Cair das Máscaras",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Dois de Muitos",
+                        "blockchain": "IPFS",
+                        "titulo": "Paranormalidades e Coisas que Só Existem Dentro de Mim",
+                        "ipfs_cid": "bafybeigb43fig7co6dt3wmiiiycgcuml473br66kvfoqza7jj2c6uaesrq",
+                        "data": "preencher",
+                        "descricao": "Obra sobre percepções internas, estados subjetivos e realidades não convencionais.",
+                        "imagem": "livro_mascaras",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafybeigb43fig7co6dt3wmiiiycgcuml473br66kvfoqza7jj2c6uaesrq"
+                    }
+                },
+                {
+                    "name": "Livro Paranormalidades",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Dois de Muitos",
+                        "blockchain": "IPFS",
+                        "titulo": "Paranormalidades e Coisas que Só Existem Dentro de Mim",
+                        "ipfs_cid": "bafybeigb43fig7co6dt3wmiiiycgcuml473br66kvfoqza7jj2c6uaesrq",
+                        "data": "preencher",
+                        "descricao": "Obra experimental com acesso descentralizado via IPFS explorando dimensões subjetivas.",
+                        "imagem": "livro_paranormal",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://tan-secret-seahorse-725.mypinata.cloud/ipfs/bafybeigb43fig7co6dt3wmiiiycgcuml473br66kvfoqza7jj2c6uaesrq"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Plataformas",
+            "children": [
+                {
+                    "name": "Plataforma AMAINAR",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "2DM",
+                        "blockchain": "preencher",
+                        "titulo": "Proposta Plataforma AMAINAR",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Proposta de visão de negócio para plataforma regenerativa e colaborativa.",
+                        "imagem": "amainar",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "2DM Game",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "2DM",
+                        "blockchain": "preencher",
+                        "titulo": "Aplicativo de Regeneração Gamificado",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Proposta de app estilo Strava da regeneração com integração futura a moedas sociais e carbono.",
+                        "imagem": "2dm_game",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://doramatech.github.io/2dmgame/"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Sites",
+            "children": [
+                {
+                    "name": "Clube da Transição",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "2DM + Ecovida Pangeia",
+                        "blockchain": "preencher",
+                        "titulo": "Landing Page Clube da Transição",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Estratégia, revisão e construção da landing page do clube.",
+                        "imagem": "clube_transicao",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://ecovidapangeia.com/clube-da-transicao"
+                    }
+                },
+                {
+                    "name": "Ecovila Sustentar",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "2DM",
+                        "blockchain": "preencher",
+                        "titulo": "Site Ecovila Sustentar",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Construção de layout inicial e articulação com desenvolvedores e artistas.",
+                        "imagem": "sustentar",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://www.ecovilasustentar.eco.br/"
+                    }
+                },
+                {
+                    "name": "AERONAVAL",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "2DM",
+                        "blockchain": "preencher",
+                        "titulo": "Landing Page AERONAVAL",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Apoio voluntário na construção da landing page durante doutorado no ITA.",
+                        "imagem": "aeronaval",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Portal Minimalista",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "2DM",
+                        "blockchain": "preencher",
+                        "titulo": "Portal Teias",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Primeira versão do portal do jardim digital Teias.",
+                        "imagem": "portal_teias",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://github.com/doramaTech/portal"
+                    }
+                },
+                {
+                    "name": "Landing Page Artística de Silvia Gilvanowa",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Silvia Gilvanowa",
+                        "blockchain": "preencher",
+                        "titulo": "Landing Page Artística de Silvia Gilvanowa",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Landing Page Artística de Silvia Gilvanowa.",
+                        "imagem": "silvia_gilvanowa_lp",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "LP Hateva",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "doramaTech",
+                        "blockchain": "preencher",
+                        "titulo": "LP Hateva",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Inspirado no projeto anterior clube da transição porem agora atualizado com todas experiencias vivenciadas no territorio, cria um modelo digital da Casa Hateva e orefece um formato de clube de assinantes para acessar os recursos e funcionalidades do ambiente físico integrado os ativos virtuais.",
+                        "imagem": "lp_hateva",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://github.com/doramaTech/lp_hateva"
+                    }
+                },
+                {
+                    "name": "Jardim Digital Teias",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Dois de Muitos",
+                        "blockchain": "preencher",
+                        "titulo": "Jardim Digital Teias",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Página google com vários links e como um diário digital, contendo vivências e experiências, letras de músicas, recomendações de livros, entre outros.",
+                        "imagem": "jardim_digital_teias",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Site Netlify JTVeiga 2020",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "Site Netlify JTVeiga 2020",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Site pessoal de Jackson Tavares Veiga hospedado no Netlify.",
+                        "imagem": "site_netlify_jtveiga",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Sistemas",
+            "children": [
+                {
+                    "name": "Fitconnect",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "2DM",
+                        "blockchain": "preencher",
+                        "titulo": "Ecossistema de Academias Digitais",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Grupo de estudos e mapeamento para construção de ecossistema fitness digital.",
+                        "imagem": "fitconnect",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "IA",
+            "children": [
+                {
+                    "name": "ChatBot 2DM",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "2DM",
+                        "blockchain": "preencher",
+                        "titulo": "Chatbot WhatsApp 2DM",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Sistema de atendimento automatizado criado antes das IAs nativas da Meta.",
+                        "imagem": "chatbot",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://github.com/doramaTech/Suporte-2dM"
+                    }
+                },
+                {
+                    "name": "Inteligencia Artificial 2dM Match",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Dois de Muitos",
+                        "blockchain": "preencher",
+                        "titulo": "IA 2dM Match",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "IA que utiliza RDfs e rede de conhecimento especialista para realizar combinações entre participantes.",
+                        "imagem": "ia_2dm_match",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Motor Oportunidades 2dM",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Dois de Muitos",
+                        "blockchain": "preencher",
+                        "titulo": "Motor Oportunidades 2dM",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Sistema inteligente e elegante para capturar, conectar e monetizar oportunidades de negócios regenerativos usando IA. Perfeito para gestores que precisam processar múltiplas oportunidades de matérias-primas, serviços e produtos diariamente.",
+                        "imagem": "motor_oportunidades_2dm",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Proposta IA Manutencao Aero GOL",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "Proposta IA Manutenção Aero GOL",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Proposta de IA para manutenção aeronáutica para a GOL.",
+                        "imagem": "proposta_ia_manutencao_aero_gol",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Web3",
+            "children": [
+                {
+                    "name": "Loja Web3",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "2DM",
+                        "blockchain": "Ethereum",
+                        "titulo": "Shop Web3 com Metamask",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Sistema completo com frontend e backend para vendas e financiamento coletivo.",
+                        "imagem": "shop_web3",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Coletivo 2DM Landing",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "2DM",
+                        "blockchain": "preencher",
+                        "titulo": "Landing Web3 Coletivo 2DM",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Página de boas-vindas com design Web3 e integração de parceiros.",
+                        "imagem": "coletivo",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://github.com/doramaTech/coletivo-2dm-landing/"
+                    }
+                },
+                {
+                    "name": "2dM Bip",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Dois de Muitos",
+                        "blockchain": "preencher",
+                        "titulo": "2dM Bip",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Projeto Opensource sendo encubado, capaz de gerar um celular social inspirado no antigo bip, porem com redes coolaborativas, integrado blockchain e redes matchs offline para resistencia e soberania de territorio (projeto em captação).",
+                        "imagem": "2dm_bip",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Artigos",
+            "children": [
+                {
+                    "name": "Agent-Oriented Control I4.0",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "A systematic modelling procedure to design agent-oriented control to coalition of capabilities",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Modelagem sistemática para controle orientado a agentes em sistemas I4.0 como ativos virtuais.",
+                        "imagem": "artigo_i40_1",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:qjMakFHDy7sC"
+                    }
+                },
+                {
+                    "name": "Intelligent Manufacturing Systems",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "Intelligent Manufacturing Systems: Self-organization in the I4.0 context",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Auto-organização em sistemas de manufatura inteligentes no contexto da Indústria 4.0.",
+                        "imagem": "artigo_i40_2",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:u-x6o8ySG0sC"
+                    }
+                },
+                {
+                    "name": "HMS/EPS Manufacturing Control",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "Control of manufacturing systems by HMS/EPS paradigms",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Controle de sistemas de manufatura usando paradigmas HMS/EPS na Indústria 4.0.",
+                        "imagem": "artigo_i40_3",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:u5HHmVD_uO8C"
+                    }
+                },
+                {
+                    "name": "Controle Distribuído I4.0",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "Controle de Sistemas de Manufatura Distribuídos no contexto da Indústria 4.0",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Estudo sobre controle distribuído aplicado à manufatura inteligente.",
+                        "imagem": "artigo_i40_4",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:d1gkVwhDpl0C"
+                    }
+                },
+                {
+                    "name": "Coalizão Multiagente I4.0",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "Método para controle de coalizão de recursos virtuais baseado em multi-agentes",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Proposta de método para controle de coalizões em sistemas multiagentes.",
+                        "imagem": "artigo_i40_5",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:2osOgNQ5qMEC"
+                    }
+                },
+                {
+                    "name": "WebStation BRV Combat",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "WebStation: Situational Awareness Platform",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Plataforma web para consciência situacional em combate BRV.",
+                        "imagem": "artigo_defesa_1",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:W7OEmFMy1HYC"
+                    }
+                },
+                {
+                    "name": "MRCF Base",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "Mission Replanning and Control Framework (MRCF)",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Framework estratégico para replanejamento de missões.",
+                        "imagem": "artigo_mrcf_1",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:Tyk-4Ss8FVUC"
+                    }
+                },
+                {
+                    "name": "MRCF BVLOS",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "MRCF: Strategic Architecture for BVLOS Operations",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Arquitetura estratégica para operações BVLOS em UTM.",
+                        "imagem": "artigo_mrcf_2",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:Tyk-4Ss8FVUC"
+                    }
+                },
+                {
+                    "name": "GBAD Saturação",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "Desempenho de Sistemas GBADs",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Análise de saturação de alvos em sistemas de defesa de ponto.",
+                        "imagem": "artigo_defesa_2",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:zYLM7Y9cAGgC"
+                    }
+                },
+                {
+                    "name": "LEON3 SIL",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "Virtualized Architecture for Software-in-the-Loop Testing",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Arquitetura virtualizada para testes SIL aplicada ao processador LEON3.",
+                        "imagem": "artigo_space_1",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:UeHWp8X0CEIC"
+                    }
+                },
+                {
+                    "name": "Virtual Testing Space Systems",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "Experience Report on Virtual Testing Architecture",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Relato de experiência em testes virtuais para sistemas espaciais embarcados.",
+                        "imagem": "artigo_space_2",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://scholar.google.com/citations?view_op=view_citation&hl=pt-BR&user=I5GH640AAAAJ&citation_for_view=I5GH640AAAAJ:IjCSPb-OGe4C"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Frameworks",
+            "children": [
+                {
+                    "name": "MRCF GitHub",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "Mission Replanning and Control Framework (MRCF) - Código",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Versão acadêmica modular e didática do MRCF com arquitetura orientada a componentes para integração com UTM.",
+                        "imagem": "mrcf_code",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://github.com/JtveigaIta/mrcf"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Catálogos",
+            "children": [
+                {
+                    "name": "Github Catalogo",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "doramaTech",
+                        "blockchain": "preencher",
+                        "titulo": "Catálogo Digital de Regeneração",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Formalização de um catálogo digital de regeneração que pode ser ativo e acessado por diferentes membros associados que desejam deixar disponível seus itens próprios, tem alguns critérios para inserir, como por exemplo ser orgânico, arte própria e ser artesanal ou fabricado 100% nacional.",
+                        "imagem": "github_catalogo",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "https://github.com/doramaTech/catalog"
+                    }
+                }
+            ]
+        },
+        {
+            "name": "Propostas",
+            "children": [
+                {
+                    "name": "Proposta Festival SustentArte 2026",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Proposta Festival SustentArte 2026",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Proposta para o Festival SustentArte 2026.",
+                        "imagem": "proposta_festival_sustentarte_2026",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Relatório 2dM Casa Hateva",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Relatório 2dM Casa Hateva",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Relatório sobre as atividades da 2dM Casa Hateva.",
+                        "imagem": "relatorio_2dm_casa_hateva",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Coletivo 2dM Hub SP Proposta de Portal Coolaborativo",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Coletivo 2dM Hub SP Proposta de Portal Colaborativo",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Proposta de portal colaborativo para o Coletivo 2dM Hub SP.",
+                        "imagem": "proposta_portal_colaborativo_2dm_hub_sp",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Convite para Coolaborar no Livro 03 2dM",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Convite para Colaborar no Livro 03 2dM",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Convite para colaboração no Livro 03 2dM.",
+                        "imagem": "convite_livro_03_2dm",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Convite para Coolaborar no Livro 04 2dM",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Convite para Colaborar no Livro 04 2dM",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Convite para colaboração no Livro 04 2dM.",
+                        "imagem": "convite_livro_04_2dm",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Apresentação Editais PindoramaTech",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Apresentação Editais PindoramaTech",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Apresentação sobre editais da PindoramaTech.",
+                        "imagem": "apresentacao_editais_pindoramatech",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Ebook Guia Como produzir Artigo Cientifico",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Ebook Guia Como produzir Artigo Científico",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Ebook guia sobre como produzir um artigo científico.",
+                        "imagem": "ebook_guia_artigo_cientifico",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Codigo QEMU participacao JTVEIGA VERITAS",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "Jackson Tavares Veiga",
+                        "blockchain": "preencher",
+                        "titulo": "Código QEMU participação JTVEIGA VERITAS",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Código QEMU com participação de Jackson Tavares Veiga no projeto VERITAS.",
+                        "imagem": "codigo_qemu_jtveiga_veritas",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Diario Bordo Foguetes",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Diário de Bordo Foguetes",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Diário de bordo relacionado a foguetes.",
+                        "imagem": "diario_bordo_foguetes",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Estudo oportunidades Foguete",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Estudo de Oportunidades Foguete",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Estudo de oportunidades no setor de foguetes.",
+                        "imagem": "estudo_oportunidades_foguete",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Modelagem Missel Fox3",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Modelagem Míssil Fox3",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Modelagem de míssil Fox3.",
+                        "imagem": "modelagem_missil_fox3",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Relatorio Sprint3 Teste SW",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Relatório Sprint3 Teste SW",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Relatório da Sprint 3 de teste de software.",
+                        "imagem": "relatorio_sprint3_teste_sw",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Proposta Dirigível Autonomo",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Proposta Dirigível Autônomo",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Proposta para um dirigível autônomo.",
+                        "imagem": "proposta_dirigivel_autonomo",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Material Base ClubFullStack",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Material Base ClubFullStack",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Material base para o ClubFullStack.",
+                        "imagem": "material_base_clubfullstack",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Curso e Mentoria Dev Sistemas IoT e OPC",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Curso e Mentoria Dev Sistemas IoT e OPC",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Curso e mentoria para desenvolvimento de sistemas IoT e OPC.",
+                        "imagem": "curso_mentoria_iot_opc",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Curso e Mentoria ClubStack",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Curso e Mentoria ClubStack",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Curso e mentoria para o ClubStack.",
+                        "imagem": "curso_mentoria_clubstack",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Apresentacao DOC SATELITE VERITAS",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Apresentação DOC SATÉLITE VERITAS",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Apresentação do documento do SATÉLITE VERITAS.",
+                        "imagem": "apresentacao_doc_satelite_veritas",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Proposta Rede Saberes Edital Comua",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Proposta Rede Saberes Edital Comua",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Proposta para a Rede Saberes no Edital Comua.",
+                        "imagem": "proposta_rede_saberes_edital_comua",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Report QEMULA",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Report QEMULA",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Relatório QEMULA.",
+                        "imagem": "report_qemula",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                },
+                {
+                    "name": "Proposta PHD NUPEDOR",
+                    "type": "NFT",
+                    "metadata": {
+                        "autor": "preencher",
+                        "blockchain": "preencher",
+                        "titulo": "Proposta PHD NUPEDOR",
+                        "ipfs_cid": "preencher",
+                        "data": "preencher",
+                        "descricao": "Proposta de PHD para NUPEDOR.",
+                        "imagem": "proposta_phd_nupedor",
+                        "opensea": "preencher",
+                        "sarafu": "preencher",
+                        "site": "preencher"
+                    }
+                }
+            ]
+        }
+    ]
+};
+
 
         function initGallery() {
             const container = document.getElementById('gallery-container');
