@@ -3,15 +3,26 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Jackson Tavares Veiga - Pesquisador, Engenheiro e Artista Digital. Rede de conhecimento em blockchain com certificados IPFS e NFTs compatíveis com Sarafu Network.">
-    <meta name="theme-color" content="#faf8f5">
-    <title>Jackson Tavares Veiga - Portfólio de Pesquisa & NFTs</title>
+    <meta name="description" content="Galeria de Artes Digitais e NFTs - Jackson Tavares Veiga.">
+    <title>Galeria de Arte Digital - Jackson Tavares Veiga</title>
     
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:wght@600;700&family=Inter:wght@400;500;600&display=swap" rel="stylesheet">
     
     <style>
+        :root {
+            --bg-color: #faf8f5;
+            --text-color: #1a1a1a;
+            --accent-color: #8B6F47;
+            --card-bg: #ffffff;
+            --border-color: #e8e4dc;
+            --header-bg: rgba(250, 248, 245, 0.95);
+            --opensea-color: #2081E2;
+            --sarafu-color: #4CAF50;
+            --academic-color: #673AB7;
+        }
+
         * {
             margin: 0;
             padding: 0;
@@ -24,991 +35,446 @@
 
         body {
             font-family: 'Inter', sans-serif;
-            background-color: #faf8f5;
-            color: #1a1a1a;
+            background-color: var(--bg-color);
+            color: var(--text-color);
             line-height: 1.6;
+            overflow-x: hidden;
         }
 
-        h1, h2, h3, h4, h5, h6 {
+        h1, h2, h3 {
             font-family: 'Playfair Display', serif;
-            font-weight: 600;
-            letter-spacing: -0.5px;
-        }
-
-        h1 {
-            font-size: clamp(2rem, 5vw, 3.5rem);
-            font-weight: 700;
-        }
-
-        h2 {
-            font-size: clamp(1.75rem, 4vw, 2.5rem);
-            font-weight: 600;
-        }
-
-        h3 {
-            font-size: clamp(1.5rem, 3vw, 2rem);
-            font-weight: 600;
-        }
-
-        p {
-            font-size: 1rem;
-            line-height: 1.8;
-            color: rgba(26, 26, 26, 0.9);
         }
 
         .container {
             width: 100%;
-            max-width: 1280px;
+            max-width: 1200px;
             margin: 0 auto;
-            padding: 0 1rem;
+            padding: 0 1.5rem;
         }
 
-        @media (min-width: 768px) {
-            .container {
-                padding: 0 1.5rem;
-            }
-        }
-
-        @media (min-width: 1024px) {
-            .container {
-                padding: 0 2rem;
-            }
-        }
-
-        /* Header */
+        /* Header & Navigation */
         header {
             position: fixed;
             top: 0;
             left: 0;
             right: 0;
             z-index: 1000;
-            background: transparent;
-            transition: all 0.4s ease-in-out;
-            padding: 1rem 0;
-        }
-
-        header.scrolled {
-            background: rgba(250, 253, 251, 0.95);
+            background: var(--header-bg);
             backdrop-filter: blur(10px);
-            border-bottom: 1px solid rgba(139, 111, 71, 0.1);
-            box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+            border-bottom: 1px solid var(--border-color);
+            padding: 1rem 0;
         }
 
         .header-content {
             display: flex;
             justify-content: space-between;
             align-items: center;
-            height: 4rem;
         }
 
         .logo {
             text-decoration: none;
-            color: #8B6F47;
-            transition: all 0.4s ease-in-out;
+            color: var(--accent-color);
+            font-weight: 700;
+            font-size: 1.2rem;
             display: flex;
             align-items: center;
-            gap: 0.75rem;
-        }
-
-        .logo:hover {
-            color: rgba(139, 111, 71, 0.8);
-        }
-
-        .logo-icon {
-            font-size: 1.5rem;
-        }
-
-        .logo-text h1 {
-            font-size: 1.25rem;
-            margin-bottom: 0.25rem;
-        }
-
-        .logo-text p {
-            font-size: 0.75rem;
-            color: #6B6B6B;
-            font-weight: 500;
-            letter-spacing: 0.05em;
+            gap: 0.5rem;
         }
 
         nav {
-            display: none;
-            gap: 2rem;
-        }
-
-        @media (min-width: 768px) {
-            nav {
-                display: flex;
-            }
+            display: flex;
+            gap: 1.5rem;
+            overflow-x: auto;
+            padding-bottom: 5px;
         }
 
         nav a {
-            font-size: 0.875rem;
-            font-weight: 500;
-            color: rgba(26, 26, 26, 0.7);
             text-decoration: none;
-            transition: all 0.4s ease-in-out;
-            position: relative;
+            color: var(--text-color);
+            font-size: 0.9rem;
+            font-weight: 500;
+            white-space: nowrap;
+            transition: color 0.3s;
         }
 
         nav a:hover {
-            color: #8B6F47;
-        }
-
-        nav a::after {
-            content: '';
-            position: absolute;
-            bottom: -4px;
-            left: 0;
-            width: 0;
-            height: 2px;
-            background: #8B6F47;
-            transition: width 0.3s ease-in-out;
-        }
-
-        nav a:hover::after {
-            width: 100%;
+            color: var(--accent-color);
         }
 
         /* Hero Section */
         .hero {
-            padding-top: 8rem;
-            padding-bottom: 5rem;
-            background: #faf8f5;
+            padding: 8rem 0 4rem;
             text-align: center;
         }
 
-        @media (min-width: 768px) {
-            .hero {
-                padding-top: 10rem;
-                padding-bottom: 8rem;
-            }
-        }
-
-        .hero h2 {
+        .hero h1 {
+            font-size: 2.5rem;
             margin-bottom: 1rem;
-            color: #1a1a1a;
         }
 
         .hero p {
-            font-size: 1.125rem;
-            color: #6B6B6B;
-            margin-bottom: 1rem;
+            color: #666;
+            max-width: 600px;
+            margin: 0 auto;
         }
 
-        .hero .accent {
-            color: #8B6F47;
-            font-weight: 600;
+        /* Gallery Grid */
+        .gallery-section {
+            padding: 4rem 0;
         }
 
-        /* Sections */
-        section {
-            border-bottom: 1px solid rgba(232, 228, 220, 0.5);
-        }
-
-        .section {
-            padding: 5rem 0;
-        }
-
-        @media (min-width: 768px) {
-            .section {
-                padding: 8rem 0;
-            }
-        }
-
-        /* CARROSSEL OFERTAS */
-        .ofertas-carousel {
-            margin: 2rem 0;
-            padding: 2rem 0;
-            background: #faf8f5;
-        }
-
-        .ofertas-carousel h2 {
-            margin-bottom: 1.5rem;
-            color: #1a1a1a;
-        }
-
-        .carousel-container {
-            display: flex;
-            overflow-x: auto;
-            gap: 1rem;
-            padding: 0.5rem 0;
-            scroll-behavior: smooth;
-            -webkit-overflow-scrolling: touch;
-        }
-
-        .carousel-container::-webkit-scrollbar {
-            height: 6px;
-        }
-
-        .carousel-container::-webkit-scrollbar-track {
-            background: rgba(139, 111, 71, 0.1);
-            border-radius: 3px;
-        }
-
-        .carousel-container::-webkit-scrollbar-thumb {
-            background: rgba(139, 111, 71, 0.3);
-            border-radius: 3px;
-        }
-
-        .carousel-container::-webkit-scrollbar-thumb:hover {
-            background: rgba(139, 111, 71, 0.5);
-        }
-
-        .carousel-card {
-            min-width: 280px;
-            background: linear-gradient(135deg, #2a2a2a 0%, #1a1a1a 100%);
-            border-radius: 12px;
-            padding: 1.5rem;
-            color: #fff;
-            flex-shrink: 0;
-            transition: transform 0.3s ease-in-out, box-shadow 0.3s ease-in-out;
-            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
-            border: 1px solid rgba(255, 255, 255, 0.1);
-        }
-
-        .carousel-card:hover {
-            transform: translateY(-4px);
-            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.25);
-        }
-
-        .carousel-card p {
-            font-size: 0.95rem;
-            font-weight: 500;
-            margin-bottom: 1rem;
-            color: #fff;
-            line-height: 1.4;
-        }
-
-        .carousel-card a {
-            text-decoration: none;
-            color: #00ffcc;
-            font-weight: 600;
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 2rem;
+            border-bottom: 2px solid var(--accent-color);
             display: inline-block;
-            margin-top: 0.75rem;
-            transition: all 0.3s ease-in-out;
-            font-size: 0.875rem;
-        }
-
-        .carousel-card a:hover {
-            color: #00ff99;
-            text-decoration: underline;
-        }
-
-        /* Tree Container */
-        .tree-container {
-            display: flex;
-            flex-direction: column;
-            gap: 2rem;
-        }
-
-        .tree-segment {
-            border-left: 4px solid rgba(139, 111, 71, 0.3);
-            padding-left: 1.5rem;
-            padding-top: 1.5rem;
-            padding-bottom: 1.5rem;
-            animation: slideInLeft 0.6s ease-out;
-        }
-
-        .tree-segment.high-complexity {
-            border-color: #8b6f47;
-        }
-
-        .tree-segment-title {
-            font-size: 1.5rem;
-            font-weight: bold;
-            margin-bottom: 1.5rem;
-            color: #7c5a3d;
-            display: flex;
-            align-items: center;
-            justify-content: space-between;
-            cursor: pointer;
-            user-select: none;
-            transition: color 0.3s ease-in-out;
-        }
-
-        .tree-segment-title:hover {
-            color: #8b6f47;
-        }
-
-        .tree-segment-title-text {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-        }
-
-        .chevron {
-            width: 1.25rem;
-            height: 1.25rem;
-            transition: transform 0.3s ease-in-out;
-        }
-
-        .tree-segment-title.expanded .chevron {
-            transform: rotate(180deg);
+            padding-bottom: 0.5rem;
         }
 
         .nft-grid {
             display: grid;
-            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-            gap: 1.5rem;
-            margin-top: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .nft-grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 2rem;
-            }
+            grid-template-columns: 1fr; /* Mobile: 1 column */
+            gap: 2.5rem;
         }
 
         @media (min-width: 1024px) {
             .nft-grid {
-                grid-template-columns: repeat(3, 1fr);
+                grid-template-columns: repeat(3, 1fr); /* Desktop: 3 columns */
             }
         }
 
+        /* NFT Card */
         .nft-card {
-            background: white;
-            border: 1px solid #e8e4dc;
-            border-radius: 0.5rem;
-            padding: 1.5rem;
-            transition: all 0.3s ease-in-out;
-            animation: fadeInUp 0.6s ease-out;
+            background: var(--card-bg);
+            border-radius: 12px;
+            overflow: hidden;
+            box-shadow: 0 4px 15px rgba(0,0,0,0.05);
+            transition: transform 0.3s ease;
+            display: flex;
+            flex-direction: column;
         }
 
         .nft-card:hover {
-            box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
-            border-color: #8b6f47;
+            transform: translateY(-5px);
         }
 
-        .nft-card.high-complexity {
-            border-color: rgba(139, 111, 71, 0.5);
-            background: linear-gradient(to bottom right, white, rgba(139, 111, 71, 0.02));
+        .nft-image-container {
+            width: 100%;
+            aspect-ratio: 1 / 1;
+            background: #eee;
+            position: relative;
+            overflow: hidden;
         }
 
-        .nft-card-header {
+        .nft-placeholder {
+            width: 100%;
+            height: 100%;
             display: flex;
-            justify-content: space-between;
-            align-items: flex-start;
-            margin-bottom: 1rem;
+            align-items: center;
+            justify-content: center;
+            background: linear-gradient(45deg, #e8e4dc, #f5f2ed);
+            color: var(--accent-color);
+            font-size: 3rem;
         }
 
-        .nft-card-title {
-            font-size: 1.125rem;
-            font-weight: 600;
-            color: #1a1a1a;
-            margin-bottom: 0.25rem;
-        }
-
-        .nft-card-author {
-            font-size: 0.75rem;
-            color: rgba(26, 26, 26, 0.5);
-            margin-top: 0.25rem;
-        }
-
-        .nft-badges {
-            display: flex;
-            gap: 0.5rem;
-        }
-
-        .nft-badge {
-            display: inline-block;
-            padding: 0.375rem 0.75rem;
-            border-radius: 9999px;
-            font-size: 0.75rem;
-            font-weight: 500;
-            background-color: rgba(139, 111, 71, 0.1);
-            color: #7c5a3d;
-        }
-
-        .nft-badge.high {
-            background-color: rgba(139, 111, 71, 0.2);
-            color: #5a3d2a;
-        }
-
-        .nft-metadata {
-            font-size: 0.875rem;
-            color: rgba(26, 26, 26, 0.6);
-            margin-top: 1rem;
+        .nft-info {
+            padding: 1.5rem;
+            flex-grow: 1;
             display: flex;
             flex-direction: column;
-            gap: 0.75rem;
         }
 
-        .nft-metadata-item {
-            display: flex;
-            gap: 0.5rem;
-            align-items: flex-start;
-        }
-
-        .nft-metadata-label {
+        .nft-caption {
             font-weight: 600;
-            color: rgba(26, 26, 26, 0.7);
-            min-width: 80px;
+            font-size: 1.1rem;
+            margin-bottom: 1rem;
+            color: var(--text-color);
         }
 
-        .nft-hash {
-            font-family: 'Courier New', monospace;
+        .expand-btn {
+            background: none;
+            border: 1px solid var(--accent-color);
+            color: var(--accent-color);
+            padding: 0.5rem 1rem;
+            border-radius: 6px;
+            cursor: pointer;
+            font-weight: 500;
+            transition: all 0.3s;
+            align-self: flex-start;
+        }
+
+        .expand-btn:hover {
+            background: var(--accent-color);
+            color: white;
+        }
+
+        .nft-details {
+            max-height: 0;
+            overflow: hidden;
+            transition: max-height 0.4s ease-out, padding 0.4s;
+            font-size: 0.9rem;
+            color: #555;
+            background: #f9f9f9;
+            border-radius: 4px;
+        }
+
+        .nft-details.active {
+            max-height: 800px; /* Increased to fit new buttons */
+            padding: 1rem;
+            margin-top: 1rem;
+            border: 1px solid #eee;
+        }
+
+        .detail-item {
+            margin-bottom: 0.5rem;
+        }
+
+        .detail-label {
+            font-weight: 600;
+            color: var(--accent-color);
+            display: block;
             font-size: 0.75rem;
-            background-color: #f5f5f5;
-            padding: 0.5rem;
-            border-radius: 0.25rem;
-            word-break: break-all;
+            text-transform: uppercase;
+            letter-spacing: 0.05em;
+        }
+
+        /* Action Buttons in Details */
+        .action-buttons {
+            display: flex;
+            flex-direction: column;
+            gap: 8px;
+            margin-top: 1.5rem;
+            padding-top: 1rem;
+            border-top: 1px solid #eee;
+        }
+
+        .action-btn {
             display: flex;
             align-items: center;
-            justify-content: space-between;
-            gap: 0.5rem;
-        }
-
-        .copy-btn {
-            background: none;
-            border: none;
-            cursor: pointer;
-            padding: 0.25rem;
-            color: rgba(26, 26, 26, 0.5);
-            transition: color 0.3s ease-in-out;
-        }
-
-        .copy-btn:hover {
-            color: #8b6f47;
-        }
-
-        .blockchain-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            padding: 0.25rem 0.5rem;
-            border-radius: 0.25rem;
-            font-size: 0.75rem;
-            font-weight: 500;
-            background-color: rgba(123, 90, 61, 0.1);
-            color: #7c5a3d;
-        }
-
-        .nft-description {
-            font-size: 0.875rem;
-            color: rgba(26, 26, 26, 0.7);
-            margin-top: 1rem;
-            line-height: 1.5;
-        }
-
-        .nft-link {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.25rem;
-            margin-top: 1rem;
-            font-size: 0.75rem;
-            color: #8b6f47;
+            justify-content: center;
+            gap: 8px;
+            padding: 10px;
+            border-radius: 6px;
             text-decoration: none;
-            transition: all 0.3s ease-in-out;
+            font-size: 0.85rem;
+            font-weight: 600;
+            color: white;
+            transition: opacity 0.3s;
         }
 
-        .nft-link:hover {
-            text-decoration: underline;
+        .action-btn:hover {
+            opacity: 0.9;
         }
 
-        /* Contact Section */
-        .contact {
-            background: rgba(45, 80, 22, 0.02);
-        }
+        .btn-opensea { background-color: var(--opensea-color); }
+        .btn-sarafu { background-color: var(--sarafu-color); }
+        .btn-academic { background-color: var(--academic-color); }
 
         /* Footer */
         footer {
-            background: rgba(26, 26, 26, 0.05);
-            border-top: 1px solid #e8e4dc;
-            padding: 3rem 0;
+            padding: 4rem 0;
             text-align: center;
-            font-size: 0.875rem;
-            color: #6B6B6B;
-        }
-
-        footer p {
-            margin-bottom: 0.5rem;
-            font-size: 0.875rem;
-        }
-
-        /* Animations */
-        @keyframes fadeInUp {
-            from {
-                opacity: 0;
-                transform: translateY(20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
-
-        @keyframes slideInLeft {
-            from {
-                opacity: 0;
-                transform: translateX(-20px);
-            }
-            to {
-                opacity: 1;
-                transform: translateX(0);
-            }
-        }
-
-        .hidden {
-            display: none;
+            border-top: 1px solid var(--border-color);
+            margin-top: 4rem;
+            color: #888;
+            font-size: 0.9rem;
         }
     </style>
 </head>
 <body>
-    <!-- Header -->
-    <header id="header">
+
+    <header>
         <div class="container">
             <div class="header-content">
-                <a href="#" class="logo">
-                    <span class="logo-icon">🔐</span>
-                    <div class="logo-text">
-                        <h1>Jackson Tavares Veiga</h1>
-                        <p>PESQUISADOR • ENGENHEIRO • ARTISTA DIGITAL</p>
-                    </div>
-                </a>
-                
-                <nav>
-                    <a href="#about">Sobre</a>
-                    <a href="#ofertas">Ofertas</a>
-                    <a href="#nfts">NFTs & Certificados</a>
-                    <a href="#contact">Contato</a>
+                <a href="#" class="logo">🎨 Jackson T. Veiga</a>
+                <nav id="main-nav">
+                    <!-- Nav items will be injected here -->
                 </nav>
             </div>
         </div>
     </header>
 
-    <!-- Hero Section -->
     <section class="hero">
         <div class="container">
-            <h2>Rede de Conhecimento</h2>
-            <p>Certificados blockchain, pesquisa acadêmica e artes digitais organizados como uma rede viva de conhecimento</p>
-            <p class="accent">Registrados em IPFS • Blockchain Polygon • Compatível com Sarafu Network</p>
+            <h1>Galeria de Arte Digital</h1>
+            <p>Uma coleção curada de certificados blockchain, pesquisas e expressões artísticas registradas em IPFS e Polygon.</p>
         </div>
     </section>
 
-    <!-- Carousel Ofertas -->
-    <section class="ofertas-carousel" id="ofertas">
-        <div class="container">
-            <h2>Ofertas & Permutas</h2>
-            <div class="carousel-container" id="carouselOfertas"></div>
-        </div>
-    </section>
-
-    <!-- Main Content -->
-    <main class="container" style="padding-top: 2rem; padding-bottom: 2rem;">
-        <!-- About Section -->
-        <section id="about" style="border: none; padding-bottom: 3rem;">
-            <div style="max-width: 48rem;">
-                <h2>Sobre este Portfólio</h2>
-                <p style="margin-top: 1.5rem; margin-bottom: 1rem; color: rgba(26, 26, 26, 0.8);">
-                    Este portfólio apresenta uma estrutura hierárquica de conhecimento, onde cada certificado blockchain 
-                    representa um fragmento de criação — técnico, artístico ou espiritual. Os itens mais complexos 
-                    (como Teses de Mestrado e o Framework MRCF) aparecem no topo de cada árvore temática.
-                </p>
-                <p style="color: rgba(26, 26, 26, 0.8);">
-                    Cada NFT está registrada em IPFS com hash SHA-256, verificável na blockchain Polygon e compatível 
-                    com a rede social Sarafu Network para trocas com moeda digital.
-                </p>
-            </div>
-        </section>
-
-        <!-- NFT Tree Structure -->
-        <section id="nfts" style="border: none; padding-bottom: 3rem;">
-            <h2 style="margin-bottom: 2rem;">Árvores de Conhecimento</h2>
-            <div class="tree-container" id="treeContainer"></div>
-        </section>
-
-        <!-- Contact Section -->
-        <section id="contact" class="contact" style="border: none; padding-top: 3rem; padding-bottom: 3rem;">
-            <div style="max-width: 48rem;">
-                <h2>Entre em Contato</h2>
-                <div style="margin-top: 1.5rem; display: flex; flex-direction: column; gap: 1.5rem;">
-                    <div>
-                        <p style="font-size: 0.875rem; color: rgba(26, 26, 26, 0.6); margin-bottom: 0.5rem;">Lattes CNPq</p>
-                        <a href="http://lattes.cnpq.br/8939850014070884" target="_blank" rel="noopener noreferrer" style="color: #8b6f47; text-decoration: none; font-weight: 500;">
-                            Ver Currículo Completo →
-                        </a>
-                    </div>
-                    <div>
-                        <p style="font-size: 0.875rem; color: rgba(26, 26, 26, 0.6); margin-bottom: 0.5rem;">Blockchain & IPFS</p>
-                        <p style="font-size: 0.875rem; color: rgba(26, 26, 26, 0.8);">
-                            Todos os certificados podem ser verificados na blockchain Polygon através de seus hashes IPFS
-                        </p>
-                    </div>
-                </div>
-            </div>
-        </section>
+    <main class="container" id="gallery-container">
+        <!-- Sections and NFTs will be injected here -->
     </main>
 
-    <!-- Footer -->
     <footer>
         <div class="container">
-            <p>© 2025 Jackson Tavares Veiga • Rede de Conhecimento em Blockchain</p>
-            <p style="font-size: 0.75rem; margin-top: 0.5rem; color: rgba(26, 26, 26, 0.5);">
-                Certificados registrados em IPFS | Blockchain: Polygon | Rede Social: Sarafu Network
-            </p>
+            <p>&copy; 2026 Jackson Tavares Veiga • Rede de Conhecimento Coletivo 2DM</p>
+            <p style="font-size: 0.8rem; margin-top: 0.5rem;">Registrado em IPFS | Blockchain Polygon | Sarafu Network</p>
         </div>
     </footer>
 
     <script>
-        // =======================
-        // DADOS DAS OFERTAS (ATUALIZADO)
-        // =======================
-        const ofertasData = [
-            // =======================
-            // PROJETOS ORIGINAIS
-            // =======================
-            { titulo: "Modelo 3D de Toca-Disco", busca: "modelo 3d toca disco" },
-            { titulo: "Criar proposta completa do Toca-Disco 2dM", busca: "proposta toca disco 2dM" },
-            { titulo: "Modelo de Proposta de Fabricação", busca: "proposta fabricação modelo" },
-            { titulo: "MVP Protótipo Caixa Abelha Tokenizada", busca: "caixa abelha tokenizado prototipo" },
-            { titulo: "Protótipo Turbina Eólica Caseira", busca: "turbina eolica caseira prototipo" },
-            { titulo: "Fabricação de Biodigestor", busca: "biodigestor fabricacao" },
-            { titulo: "Impressão 100 colheres (logo 2dM)", busca: "impressao colheres bioplastico 2dM" },
-            { titulo: "MVP Máquina de Tijolos (buscar fabricante)", busca: "maquina tijolos fabricante" },
-            { titulo: "Buscar doador para Prensa de Livros", busca: "doacao prensa livros" },
-            { titulo: "Impressão 3D Suporte de Violão", busca: "suporte violao imprimir 3d" },
-            { titulo: "Impressão 3D Sapateira", busca: "sapateira impressao 3d" },
-            { titulo: "Serviço Transporte de Portas", busca: "transporte portas serviço" },
-        
-            // =======================
-            // PESQUISA E ARTIGOS (AERONÁUTICA / IA / UTM)
-            // =======================
-            { titulo: "Voluntário: Revisão artigo Virtual Assets for Satellite Parts (AAS)", busca: "revisar artigo satellite assets AAS" },
-            { titulo: "Voluntário: Revisão artigo Ifá ML e Gamificação Educacional", busca: "revisar artigo ifa machine learning gamificacao" },
-            { titulo: "Voluntário: Revisão artigo Narrativas Regenerativas e Governança Territorial", busca: "revisar artigo regenerativo governanca territorial" },
-            { titulo: "Voluntário: Revisão artigo Soberania e Vulnerabilidade Territorial", busca: "revisar artigo soberania vulnerabilidade brasil" },
-            { titulo: "Voluntário: Revisão artigo Arquiteturas Inteligentes para Drones", busca: "revisar artigo drones multi agent systems" },
-            { titulo: "Voluntário: Revisão artigo Digital Twin para Drones (AAS PLANAR)", busca: "revisar artigo digital twin drones AAS PLANAR" },
-            { titulo: "Voluntário: Pesquisa Path Planning UAV com Deep Multi-Agent", busca: "uav path planning deep multi agent research" },
-            { titulo: "Voluntário: Pesquisa MRCF Mission Replanning Framework", busca: "mission replanning control framework MRCF" },
-            { titulo: "Voluntário: Curso UTM + Testes código MRCF", busca: "curso UTM drone simulador MRCF" },
-        
-            // =======================
-            // GOVERNANÇA / REDE / CULTURA
-            // =======================
-            { titulo: "Voluntário: Construção Livro Hub SP Manifesto Regenerativo", busca: "livro manifesto regenerativo urbano biorregional" },
-            { titulo: "Voluntário: Finalização artigo coletivo Culturas Regenerativas", busca: "artigo culturas regenerativas coletivo" },
-            { titulo: "Voluntário: Captura e reaproveitamento de madeira descartada", busca: "reaproveitamento madeira serralheria artesanato" },
-            { titulo: "Voluntário: Parcerias para coleta de recicláveis", busca: "parcerias reciclaveis coleta doacao materiais" },
-            { titulo: "Voluntário: Oficina montagem caixas de abelhas nativas", busca: "oficina abelhas nativas caixas montagem" },
-            { titulo: "Voluntário: Infraestrutura servidor Hub SP (governança digital)", busca: "servidor comunitario infraestrutura governanca digital" },
-        
-            // =======================
-            // EDITORIAL / LIVROS 2dM
-            // =======================
-            { titulo: "Voluntário: Revisão e impressão Livro 3 - Cair das Máscaras", busca: "livro cair das mascaras revisao impressao" },
-            { titulo: "Voluntário: Finalização Livro 4 - Paranormalidades dentro de mim", busca: "livro paranormalidades revisao formatacao" }
-        ];
-
-          // =======================
-        // DADOS DAS NFTs (REVISADO)
-        // =======================
+        // Dados das NFTs com os novos campos solicitados
         const nftData = {
             "name": "Rede de Conhecimento Coletivo 2DM",
-            "description": "Estrutura hierárquica de artes digitais, documentos e certificados em blockchain e IPFS",
             "children": [
                 {
-                    "name": "MRCF & Engenharia",
-                    "type": "segment",
+                    "name": "Engenharia & MRCF",
                     "children": [
                         {
                             "name": "Minicurso Framework MRCF",
                             "type": "NFT",
-                            "complexity": "High",
                             "metadata": {
                                 "autor": "Jackson Tavares Veiga",
-                                "tipo": "NFT_Certificado",
                                 "blockchain": "Polygon",
-                                "rede_social": "Sarafu Network Compatible",
                                 "titulo": "Minicurso Framework MRCF",
                                 "ipfs_cid": "4e4189150209cb19cd1cd87b2b25257327c7cfb7aceeb631ca68889dbce80fd2",
                                 "data": "04/10/2025",
-                                "descricao": ""
+                                "descricao": "Framework para replanejamento de missões e controle de sistemas complexos.",
+                                "opensea": "https://opensea.io/collection/2dm",
+                                "sarafu": "https://sarafu.network/vouchers/0x5edA8e2EAEaF93a1b4d6dD20005FfC15091cA583",
+                                "academic": "https://scholar.google.com/"
                             }
                         },
                         {
-                            "name": "Controle de Manufatura com Sistemas Distribuídos",
+                            "name": "Controle de Manufatura",
                             "type": "NFT",
-                            "complexity": "Standard",
                             "metadata": {
                                 "autor": "Jackson Tavares Veiga",
-                                "tipo": "NFT_Certificado",
                                 "blockchain": "Polygon",
-                                "rede_social": "Sarafu Network Compatible",
                                 "titulo": "Controle de Manufatura com Sistemas Distribuídos",
                                 "ipfs_cid": "55a03f27f4bb1b6e297a90b32e267f95932607a1e8849697efc01628ec2e19d7",
                                 "data": "Novembro / 2020",
-                                "descricao": "Trabalho técnico sobre controle distribuído aplicado à manufatura inteligente."
+                                "descricao": "Trabalho técnico sobre controle distribuído aplicado à manufatura inteligente.",
+                                "opensea": "https://opensea.io/collection/2dm",
+                                "sarafu": "https://sarafu.network/vouchers/0x5edA8e2EAEaF93a1b4d6dD20005FfC15091cA583"
                             }
-                        },
-                        {
-                            "name": "FitConnect SW",
-                            "type": "segment",
-                            "children": [
-                                {
-                                    "name": "Relatório de Desenvolvimento — Plataforma FitConnect",
-                                    "type": "NFT",
-                                    "complexity": "High",
-                                    "metadata": {
-                                        "autor": "clubefullstack",
-                                        "tipo": "NFT_Documento",
-                                        "blockchain": "IPFS",
-                                        "rede_social": "Sarafu Network Compatible",
-                                        "titulo": "Relatório de Desenvolvimento — Plataforma FitConnect",
-                                        "ipfs_cid": "bafybeibyun5nfaxytmiyq5f2no3isf5vdspgm7rff4idnqjtitehvgz56q",
-                                        "data": "Não informado",
-                                        "descricao": "",
-                                        "repositorio": "https://github.com/clubfullstack/FitConnect",
-                                        "site": "",
-                                        "contato": "",
-                                        "participacao": ""
-                                    }
-                                }
-                            ]
-                        },
-                        {
-                            "name": "Portfólio Digital Humanizado",
-                            "type": "segment",
-                            "children": [
-                                {
-                                    "name": "Relatório de Experiência — Construção de Portfólio Digital Humanizado",
-                                    "type": "NFT",
-                                    "complexity": "High",
-                                    "metadata": {
-                                        "autor": "Arã Yabytã (Akan)",
-                                        "tipo": "NFT_Documento",
-                                        "blockchain": "IPFS",
-                                        "rede_social": "Sarafu Network Compatible",
-                                        "titulo": "Relatório de Experiência — Construção de Portfólio Digital Humanizado",
-                                        "ipfs_cid": "bafybeidvacdxnpogpu5stjrxq4i6zg3mffzcpowdcikx5ffisvman6rvfa",
-                                        "data": "Não informado",
-                                        "descricao": "",
-                                        "repositorio": "https://github.com/doramaTech/silviagilwanova",
-                                        "site": "https://silviagilwanova.netlify.app/",
-                                        "contato": "contatos.2dm@gmail.com",
-                                        "participacao": "Coletivo Dois de Muitos (2dM)"
-                                    }
-                                }
-                            ]
                         }
                     ]
                 },
                 {
-                    "name": "Arte & Coletivos",
-                    "type": "segment",
+                    "name": "Arte & Digital",
                     "children": [
                         {
-                            "name": "Portal PindoramaTech as a Service (PaaS) Especificação",
+                            "name": "Portfólio Humanizado",
                             "type": "NFT",
-                            "complexity": "Standard",
                             "metadata": {
-                                "autor": "Jackson Tavares Veiga",
-                                "tipo": "NFT_Documento",
+                                "autor": "Arã Yabytã (Akan)",
                                 "blockchain": "IPFS",
-                                "rede_social": "Sarafu Network Compatible",
-                                "titulo": "Portal PindoramaTech as a Service (PaaS) Especificação",
-                                "ipfs_cid": "bafybeiao24bc5vqb2yj3riw3drnor3m7pwx5laluz7cqmykhk3xxovdkwm",
-                                "data": "Não informado",
-                                "descricao": "Plataforma PaaS com autenticação 2FA e acesso a especialistas do ecossistema.",
-                                "repositorio": "",
-                                "site": "",
-                                "contato": "",
-                                "participacao": ""
+                                "titulo": "Relatório de Experiência — Portfólio Digital Humanizado",
+                                "ipfs_cid": "bafybeidvacdxnpogpu5stjrxq4i6zg3mffzcpowdcikx5ffisvman6rvfa",
+                                "data": "2024",
+                                "descricao": "Exploração de interfaces digitais com foco na experiência humana e coletiva.",
+                                "opensea": "https://opensea.io/collection/2dm",
+                                "sarafu": "https://sarafu.network/vouchers/0x5edA8e2EAEaF93a1b4d6dD20005FfC15091cA583",
+                                "site": "https://silviagilwanova.netlify.app/"
                             }
                         }
                     ]
                 }
             ]
         };
-        // =======================
-        // RENDER CARROSSEL
-        // =======================
-        function renderCarousel() {
-            const container = document.getElementById("carouselOfertas");
-            if (!container) return;
 
-            ofertasData.forEach(item => {
-                const link = `https://permuto.com.br/?s=${encodeURIComponent(item.busca)}`;
+        function initGallery() {
+            const container = document.getElementById('gallery-container');
+            const nav = document.getElementById('main-nav');
 
-                const card = document.createElement("div");
-                card.className = "carousel-card";
+            nftData.children.forEach((section, index) => {
+                const sectionId = `section-${index}`;
+                
+                const navLink = document.createElement('a');
+                navLink.href = `#${sectionId}`;
+                navLink.textContent = section.name;
+                nav.appendChild(navLink);
 
-                card.innerHTML = `
-                    <p>${item.titulo}</p>
-                    <a href="${link}" target="_blank" rel="noopener noreferrer">Ver no Permuto →</a>
-                `;
+                const sectionEl = document.createElement('section');
+                sectionEl.id = sectionId;
+                sectionEl.className = 'gallery-section';
+                
+                const title = document.createElement('h2');
+                title.className = 'section-title';
+                title.textContent = section.name;
+                sectionEl.appendChild(title);
 
-                container.appendChild(card);
+                const grid = document.createElement('div');
+                grid.className = 'nft-grid';
+
+                renderNFTs(section.children, grid);
+
+                sectionEl.appendChild(grid);
+                container.appendChild(sectionEl);
             });
         }
 
-// Initialize
-function init() {
-    renderCarousel();
-    renderTree();
-    setupScrollListener();
-}
-
-function setupScrollListener() {
-    const header = document.getElementById('header');
-    window.addEventListener('scroll', () => {
-        if (window.scrollY > 50) {
-            header.classList.add('scrolled');
-        } else {
-            header.classList.remove('scrolled');
-        }
-    });
-}
-
-function renderTree() {
-    const container = document.getElementById('treeContainer');
-    container.innerHTML = '';
-
-    nftData.children.forEach((segment, idx) => {
-        const segmentEl = renderSegment(segment, idx);
-        container.appendChild(segmentEl);
-    });
-}
-
-// 🔥 AGORA RECURSIVO (suporta segment dentro de segment)
-function renderSegment(segment, idx = 0) {
-    const div = document.createElement('div');
-    div.className = 'tree-segment';
-
-    if (segment.children?.some(c => c.complexity === 'High')) {
-        div.classList.add('high-complexity');
-    }
-
-    div.style.animationDelay = `${idx * 0.15}s`;
-
-    const title = document.createElement('div');
-    title.className = 'tree-segment-title expanded';
-    title.innerHTML = `
-        <div class="tree-segment-title-text">
-            <span style="font-size: 1.5rem;">🌳</span>
-            ${segment.name}
-        </div>
-        <svg class="chevron" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-            <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M19 14l-7 7m0 0l-7-7m7 7V3"></path>
-        </svg>
-    `;
-
-    const grid = document.createElement('div');
-    grid.className = 'nft-grid';
-
-    segment.children?.forEach((item, itemIdx) => {
-
-        // 🔹 Se for NFT
-        if (item.type === 'NFT' && item.metadata) {
-            const hash = item.metadata.ipfs_hash || item.metadata.ipfs_cid;
-
-            if (hash && typeof hash === 'string' && !hash.startsWith('[')) {
-                const card = renderNFTCard(item, itemIdx);
-                grid.appendChild(card);
-            }
+        function renderNFTs(items, gridElement) {
+            items.forEach(item => {
+                if (item.type === 'NFT') {
+                    const card = createNFTCard(item);
+                    gridElement.appendChild(card);
+                } else if (item.children) {
+                    renderNFTs(item.children, gridElement);
+                }
+            });
         }
 
-        // 🔹 Se for outro segment (recursivo)
-        else if (item.type === 'segment') {
-            const subSegment = renderSegment(item, itemIdx);
-            grid.appendChild(subSegment);
-        }
+        function createNFTCard(nft) {
+            const meta = nft.metadata;
+            const card = document.createElement('div');
+            card.className = 'nft-card';
 
-    });
+            const placeholderIcon = meta.titulo.toLowerCase().includes('relatório') ? '📄' : '🖼️';
 
-    title.addEventListener('click', () => {
-        title.classList.toggle('expanded');
-        grid.classList.toggle('hidden');
-    });
-
-    div.appendChild(title);
-    div.appendChild(grid);
-
-    return div;
-}
-
-function renderNFTCard(nft, idx) {
-    const div = document.createElement('div');
-    div.className = 'nft-card';
-
-    if (nft.complexity === 'High') {
-        div.classList.add('high-complexity');
-    }
-
-    div.style.animationDelay = `${idx * 0.1}s`;
-
-    const meta = nft.metadata;
-
-    // 🔥 Compatível com CID + HASH
-    const hash = meta.ipfs_hash || meta.ipfs_cid || '';
-    const hashShort = hash ? hash.slice(0, 20) : 'N/A';
-
-    div.innerHTML = `
-        <div class="nft-card-header">
-            <div>
-                <div class="nft-card-title">${meta.titulo || nft.name}</div>
-                <div class="nft-card-author">${meta.autor || 'Autor não informado'}</div>
-            </div>
-            <div class="nft-badges">
-                ${nft.complexity === 'High' ? '<span class="nft-badge high">Complexo</span>' : ''}
-                <span class="nft-badge">${nft.complexity || 'Padrão'}</span>
-            </div>
-        </div>
-
-        <div class="nft-metadata">
-            <div class="nft-metadata-item">
-                <span class="nft-metadata-label">Data:</span>
-                <span>${meta.data || 'Não informado'}</span>
-            </div>
-
-            <div class="nft-metadata-item">
-                <span class="nft-metadata-label">Blockchain:</span>
-                <span class="blockchain-badge">${meta.blockchain || 'N/A'}</span>
-            </div>
-
-            <div class="nft-metadata-item">
-                <span class="nft-metadata-label">IPFS:</span>
-                <div class="nft-hash">
-                    <span>${hashShort}...</span>
-                    ${hash ? `<button class="copy-btn" onclick="copyHash('${hash}')" title="Copiar hash">📋</button>` : ''}
+            card.innerHTML = `
+                <div class="nft-image-container">
+                    <div class="nft-placeholder">${placeholderIcon}</div>
                 </div>
-            </div>
+                <div class="nft-info">
+                    <div class="nft-caption">${meta.titulo}</div>
+                    <button class="expand-btn">Expandir Detalhes</button>
+                    <div class="nft-details">
+                        <div class="detail-item">
+                            <span class="detail-label">Autor</span>
+                            ${meta.autor}
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Data</span>
+                            ${meta.data}
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">Blockchain</span>
+                            ${meta.blockchain}
+                        </div>
+                        <div class="detail-item">
+                            <span class="detail-label">IPFS CID</span>
+                            <code style="word-break: break-all; font-size: 0.7rem;">${meta.ipfs_cid}</code>
+                        </div>
+                        ${meta.descricao ? `
+                        <div class="detail-item">
+                            <span class="detail-label">Descrição</span>
+                            ${meta.descricao}
+                        </div>` : ''}
+                        
+                        <div class="action-buttons">
+                            ${meta.opensea ? `<a href="${meta.opensea}" target="_blank" class="action-btn btn-opensea">🌊 OpenSea 2dM</a>` : ''}
+                            ${meta.sarafu ? `<a href="${meta.sarafu}" target="_blank" class="action-btn btn-sarafu">🌱 Sarafu Network</a>` : ''}
+                            ${meta.academic ? `<a href="${meta.academic}" target="_blank" class="action-btn btn-academic">🎓 Link Acadêmico</a>` : ''}
+                            ${meta.site ? `<a href="${meta.site}" target="_blank" style="color: var(--accent-color); font-size: 0.8rem; text-align: center; margin-top: 5px;">Acessar Site Externo</a>` : ''}
+                        </div>
+                    </div>
+                </div>
+            `;
 
-            <div class="nft-metadata-item">
-                <span class="nft-metadata-label">Rede:</span>
-                <span style="font-size: 0.75rem;">${meta.rede_social || 'N/A'}</span>
-            </div>
-        </div>
+            const btn = card.querySelector('.expand-btn');
+            const details = card.querySelector('.nft-details');
 
-        ${meta.descricao ? `<div class="nft-description">${meta.descricao}</div>` : ''}
+            btn.addEventListener('click', () => {
+                const isActive = details.classList.toggle('active');
+                btn.textContent = isActive ? 'Recolher' : 'Expandir Detalhes';
+            });
 
-        ${meta.lattes ? `
-        <a href="${meta.lattes}" target="_blank" rel="noopener noreferrer" class="nft-link">
-            Ver no Lattes →
-        </a>` : ''}
+            return card;
+        }
 
-        ${meta.repositorio ? `
-        <a href="${meta.repositorio}" target="_blank" class="nft-link">
-            Repositório →
-        </a>` : ''}
-
-        ${meta.site ? `
-        <a href="${meta.site}" target="_blank" class="nft-link">
-            Acessar Site →
-        </a>` : ''}
-    `;
-
-    return div;
-}
-
-function copyHash(hash) {
-    navigator.clipboard.writeText(hash);
-    alert('Hash copiado: ' + hash.slice(0, 20) + '...');
-}
-
-// Start
-document.addEventListener('DOMContentLoaded', init);
+        document.addEventListener('DOMContentLoaded', initGallery);
     </script>
 </body>
 </html>
